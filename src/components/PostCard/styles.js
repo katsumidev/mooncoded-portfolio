@@ -1,0 +1,116 @@
+import styled from "styled-components";
+
+export const Container = styled.div`
+  display: flex;
+  flex-direction: column;
+  width: 300px;
+  margin: 5px;
+  cursor: pointer;
+  border-radius: 5px;
+  transition: 0.2s;
+
+  :hover {
+    transform: scale(1.05);
+  }
+`;
+
+export const Info = styled.div`
+  display: flex;
+  flex-direction: column;
+  padding: 0.6rem;
+  border-radius: 3px;
+  height: auto;
+
+  h2 {
+    font-size: 1.5rem;
+    word-wrap: break-word;
+    font-weight: 900;
+    color: #171122;
+  }
+
+  p {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    margin: 10px 0;
+    color: var(--main-gray);
+  }
+`;
+
+export const Date = styled.p`
+  font-weight: 200;
+  opacity: 0.7;
+`;
+
+export const Title = styled.b`
+  width: auto;
+  font-size: 10px;
+`;
+
+export const TagContainer = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid #171122;
+  padding: 5px 8px;
+  border-radius: 100px;
+  transition: 0.2s;
+
+  :hover {
+    background-color: #171122;
+    color: white;
+  }
+`;
+
+export const TagWrapper = styled.div`
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+  margin: 15px 0;
+`;
+
+export const ImageWrapper = styled.div`
+  position: relative;
+
+  img {
+    display: block;
+    border-radius: 10px;
+    width: 100%;
+    height: auto;
+  }
+`;
+
+export const Overlay = styled.div`
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 100%;
+  width: 100%;
+  opacity: 0;
+  transition: 0.5s ease;
+  border-radius: 10px;
+  background-color: rgba(0, 0, 0, 0.7);
+
+  ${Container}:hover & {
+    opacity: 0.7;
+  }
+`;
+
+export const EntraptaWrapper = styled.div`
+  display: flex;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  gap: 4px;
+  opacity: 0;
+  transform: translate(-50%, -50%);
+  transition: 0.2s;
+
+  ${Container}:hover & {
+    opacity: 1;
+  }
+`;
