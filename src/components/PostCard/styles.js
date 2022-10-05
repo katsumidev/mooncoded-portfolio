@@ -25,7 +25,7 @@ export const Info = styled.div`
     font-size: 1.5rem;
     word-wrap: break-word;
     font-weight: 900;
-    color: #171122;
+    color: ${(props) => props.theme.colors.mainText};
   }
 
   p {
@@ -35,7 +35,7 @@ export const Info = styled.div`
     -webkit-line-clamp: 3;
     -webkit-box-orient: vertical;
     margin: 10px 0;
-    color: var(--main-gray);
+    color: ${(props) => props.theme.colors.mainText};
   }
 `;
 
@@ -53,14 +53,15 @@ export const TagContainer = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
-  border: 1px solid #171122;
+  border: 1px solid ${(props) => props.theme.colors.mainText};
+  color: ${(props) => props.theme.colors.mainText};
   padding: 5px 8px;
   border-radius: 100px;
   transition: 0.2s;
 
   :hover {
-    background-color: #171122;
-    color: white;
+    background-color: ${(props) => props.theme.colors.mainText};
+    color: ${(props) => props.theme.colors.reverseColor};
   }
 `;
 

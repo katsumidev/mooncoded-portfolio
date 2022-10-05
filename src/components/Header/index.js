@@ -1,12 +1,46 @@
-import React from "react";
+import React, { useContext, useEffect, useState } from "react";
 import { Container, Title, HeaderMenu, SocialMedias } from "./styles";
+import Link from "next/link";
+import * as Scroll from "react-scroll";
+import Switch from "react-switch";
 import { BsInstagram, BsGithub, BsTwitter } from "../../styles/Icons";
+import { useRouter } from "next/router";
+import { ThemeContext } from "styled-components";
+import nookies from "nookies";
 
-function Header() {
+function Header(props) {
+  const router = useRouter();
+  const [fixed, setFixed] = useState(false);
+  const { title } = useContext(ThemeContext);
+  const [theme, setTheme] = useState();
+
+  useEffect(() => {
+    const { theme } = nookies.get("theme");
+
+    setTheme(theme);
+  }, [theme]);
+
+  if (typeof window !== "undefined") {
+    function setHeaderFixed() {
+      if (window.scrollY >= 1) {
+        setFixed(true);
+      } else {
+        setFixed(false);
+      }
+    }
+
+    window.addEventListener("scroll", setHeaderFixed);
+  }
+
   return (
-    <Container>
+    <Container active={fixed}>
       <Title>
-        <img src="/static/assets/mainLogo.png" width="50" />
+        <img
+          src={title === "light-theme" ? "/static/assets/mainLogo.png" : "/static/assets/whiteLogo.png"}
+          alt="logo"
+          width="40"
+          onClick={() => router.push("/")}
+        />
       </Title>
       <HeaderMenu>
         <ul>
@@ -15,6 +49,15 @@ function Header() {
           <li>Projects</li>
           <li>Contact</li>
         </ul>
+        <Switch
+          onChange={props.toggleTheme}
+          checked={title === "light-theme"}
+          checkedIcon={false}
+          uncheckedIcon={false}
+          height={10}
+          width={30}
+          handleDiameter={10}
+        />
         <SocialMedias>
           <BsGithub
             onClick={() =>
