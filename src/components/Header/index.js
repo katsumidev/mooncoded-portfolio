@@ -3,10 +3,11 @@ import { Container, Title, HeaderMenu, SocialMedias } from "./styles";
 import Link from "next/link";
 import * as Scroll from "react-scroll";
 import Switch from "react-switch";
-import { BsInstagram, BsGithub, BsTwitter } from "../../styles/Icons";
+import { BsInstagram, BsGithub, BsTwitter, GiMoon, GiStripedSun } from "../../styles/Icons";
 import { useRouter } from "next/router";
 import { ThemeContext } from "styled-components";
 import nookies from "nookies";
+import ThemeSwitcher from "../ThemeSwitcher";
 
 function Header(props) {
   const router = useRouter();
@@ -45,19 +46,19 @@ function Header(props) {
       <HeaderMenu>
         <ul>
           <li>About</li>
-          <li>Blog</li>
+          <li onClick={() => router.push("/blog")}>Blog</li>
           <li>Projects</li>
           <li>Contact</li>
         </ul>
-        <Switch
+        <ThemeSwitcher onClick={props.toggleTheme} checked={title} />
+        {/* <Switch
           onChange={props.toggleTheme}
           checked={title === "light-theme"}
-          checkedIcon={false}
-          uncheckedIcon={false}
+          checkedIcon={<GiStripedSun />}
+          uncheckedIcon={<GiMoon />}
           height={10}
           width={30}
-          handleDiameter={10}
-        />
+        /> */}
         <SocialMedias>
           <BsGithub
             onClick={() =>

@@ -8,6 +8,7 @@ export default {
     background: "#F5F5F5",
     mainText: "#2C2C34",
     secundaryText: "#707C80",
-    reverseColor: "#FFFFFF"
+    reverseColor: "#FFFFFF",
+    codeBlock: "#282A36",
   },
 };

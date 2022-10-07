@@ -9,5 +9,6 @@ export default {
     mainText: "#FFFFFF",
     secundaryText: "#707C80",
     reverseColor: "#2C2C34",
+    codeBlock: "#282A36",
   },
 };

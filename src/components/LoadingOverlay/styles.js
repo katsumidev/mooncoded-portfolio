@@ -1,9 +1,6 @@
-import styled from 'styled-components';
+import styled from "styled-components";
 
-export const Container = styled.div`
-  
-`;
-
+export const Container = styled.div``;
 
 export const Transition = styled.div`
   position: fixed;
@@ -15,22 +12,22 @@ export const Transition = styled.div`
   z-index: 1;
   left: 0;
   top: 0;
-  transition: .2s;
-  background-color: var(--dark-background);
+  transition: 0.2s;
+  background-color: #10101A;
   animation: init-anim 0.2s linear;
   -webkit-animation-fill-mode: forwards; /* Chrome 16+, Safari 4+ */
-  -moz-animation-fill-mode: forwards;    /* FF 5+ */
-  -o-animation-fill-mode: forwards;      /* Not implemented yet */
-  -ms-animation-fill-mode: forwards;     /* IE 10+ */
-  animation-fill-mode: forwards;         /* When the spec is finished */
+  -moz-animation-fill-mode: forwards; /* FF 5+ */
+  -o-animation-fill-mode: forwards; /* Not implemented yet */
+  -ms-animation-fill-mode: forwards; /* IE 10+ */
+  animation-fill-mode: forwards; /* When the spec is finished */
   gap: 100px;
 
   @keyframes init-anim {
     0% {
-        width: 0;
+      width: 0;
     }
     100% {
-        width: 100vw;
+      width: 100vw;
     }
   }
 `;
@@ -41,7 +38,7 @@ export const Letter = styled.p`
 `;
 
 export const Moon = styled.div`
-  background-color: #FFBCFD;
+  background-color: #ffbcfd;
   position: relative;
   height: 8em;
   width: 8em;
@@ -51,14 +48,14 @@ export const Moon = styled.div`
 
   :after {
     content: "";
-    background-color: #FD99FB;
+    background-color: #fd99fb;
     height: 0.9em;
     width: 0.9em;
     border-radius: 50%;
     position: absolute;
     top: 3.75em;
     left: 1.25em;
-    box-shadow: 0.9em -2.1em 0 0.2em #FD99FB, 1.5em -0.3em 0 -0.06em #FD99FB;
+    box-shadow: 0.9em -2.1em 0 0.2em #fd99fb, 1.5em -0.3em 0 -0.06em #fd99fb;
   }
 `;
 
@@ -84,9 +81,8 @@ export const OrbitObject = styled.div`
   height: 40px;
   width: 40px;
   border-radius: 50%;
-  background-color: #FD99FB;
+  background-color: #fd99fb;
   color: white;
   font-size: 3.5em;
   left: 35px;
 `;
-

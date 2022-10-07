@@ -88,3 +88,11 @@ export const SocialMedias = styled.div`
     }
   }
 `;
+
+export const ThemeSwitcher = styled.div`
+  background-color: ${props => props.checked == "light-theme" ? props.theme.colors.primary : props.theme.colors.secundary};
+  height: 20px;
+  width: 20px;
+  border-radius: 50%;
+  cursor: pointer;
+`

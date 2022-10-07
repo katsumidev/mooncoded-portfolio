@@ -4,8 +4,8 @@ export const Container = styled.div`
   width: 700px;
   margin: 60px auto;
   display: flex;
-
   flex-direction: column;
+  color: ${(props) => props.theme.colors.mainText};
 
   @media (max-width: 900px) {
     width: 100%;
@@ -20,13 +20,13 @@ export const PostData = styled.div`
     display: flex;
 
     svg {
-      fill: var(--gray);
+      fill: ${(props) => props.theme.colors.secundaryText};
       margin: 0 5px 0 0;
     }
   }
 
   sub {
-    color: var(--gray);
+    color: ${(props) => props.theme.colors.secundaryText};
     font-weight: 400;
   }
 `;
@@ -74,7 +74,7 @@ export const PostContent = styled.div`
 
   th,
   td {
-    border: 0.125rem solid var(--gray);
+    border: 0.125rem solid ${(props) => props.theme.colors.mainText};
     padding: 3px;
 
     @media (min-width: 500px) {
@@ -88,7 +88,7 @@ export const PostContent = styled.div`
 
   a {
     text-decoration: none;
-    color: red;
+    color: ${(props) => props.theme.colors.primary};
     transition: 0.2s;
 
     :hover {
@@ -97,7 +97,7 @@ export const PostContent = styled.div`
   }
 
   blockquote {
-    border-left: 5px solid black;
+    border-left: 5px solid ${(props) => props.theme.colors.mainText};
     margin: 1.5rem -15px;
     font-size: 12.5pt;
     padding: 0.25rem 30px;
@@ -108,9 +108,9 @@ export const PostContent = styled.div`
   }
 
   code {
-    background-color: var(--code-block);
+    background-color: ${(props) => props.theme.colors.codeBlock};
     border-radius: 3px;
-    color: var(--white);
+    color: white;
     padding: 0 5px;
     font-size: 11pt;
     margin: 2px;
