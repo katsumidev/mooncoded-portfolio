@@ -8,6 +8,7 @@ import light from "../styles/themes/light";
 import dark from "../styles/themes/dark";
 import nookies from "nookies";
 import LoadingOverlay from "../components/LoadingOverlay";
+import CustomCursor from "../components/CustomCursor";
 
 function MyApp({ Component, pageProps }) {
   const router = useRouter();
@@ -91,6 +92,7 @@ function MyApp({ Component, pageProps }) {
   return (
     <ThemeProvider theme={theme}>
       {loading && <LoadingOverlay />}
+      <CustomCursor />
       <GlobalStyle />
       <Header toggleTheme={toggleTheme} />
       <Component {...pageProps} />

@@ -10,6 +10,7 @@
   },
   "dependencies": {
     "cookies-next": "^2.1.1",
+    "framer-motion": "^7.5.3",
     "gray-matter": "^4.0.3",
     "grey-matter": "^0.0.0",
     "gsap": "^3.11.1",

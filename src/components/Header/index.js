@@ -1,9 +1,15 @@
 import React, { useContext, useEffect, useState } from "react";
-import { Container, Title, HeaderMenu, SocialMedias } from "./styles";
-import Link from "next/link";
-import * as Scroll from "react-scroll";
-import Switch from "react-switch";
-import { BsInstagram, BsGithub, BsTwitter, GiMoon, GiStripedSun } from "../../styles/Icons";
+import {
+  Container,
+  Title,
+  HeaderMenu,
+  SocialMedias,
+  EntraptaWrapper,
+  ContainerEye,
+  Eyes,
+  Light,
+} from "./styles";
+import { BsInstagram, BsGithub, BsTwitter } from "../../styles/Icons";
 import { useRouter } from "next/router";
 import { ThemeContext } from "styled-components";
 import nookies from "nookies";
@@ -36,12 +42,16 @@ function Header(props) {
   return (
     <Container active={fixed}>
       <Title>
-        <img
-          src={title === "light-theme" ? "/static/assets/mainLogo.png" : "/static/assets/whiteLogo.png"}
-          alt="logo"
-          width="40"
-          onClick={() => router.push("/")}
-        />
+        <EntraptaWrapper onClick={() => router.push("/")}>
+          <ContainerEye>
+            <Eyes>
+              <Light />
+            </Eyes>
+            <Eyes>
+              <Light />
+            </Eyes>
+          </ContainerEye>
+        </EntraptaWrapper>
       </Title>
       <HeaderMenu>
         <ul>
