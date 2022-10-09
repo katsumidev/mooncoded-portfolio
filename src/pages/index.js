@@ -1,12 +1,15 @@
-import React from 'react';
-
+import React from "react";
+import Hero from "../components/Hero";
+import { MainWrapper} from "../styles/pages/HomePage";
 // import { Container } from './styles';
 
 function Home() {
   return (
-    <>
-    <h1>foda</h1>
-    </>
+    <MainWrapper>
+      <Hero>
+        
+      </Hero>
+    </MainWrapper>
   );
 }
 

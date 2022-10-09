@@ -3,7 +3,7 @@ import styled from "styled-components";
 export const Container = styled.div`
   display: flex;
   position: fixed;
-  justify-content: space-between;
+  justify-content: center;
   align-items: center;
   flex-direction: row;
   padding-right: 15px;
@@ -20,6 +20,12 @@ export const Container = styled.div`
     cursor: pointer;
   }
 `;
+
+export const Wrapper = styled.div`
+  display: flex;
+  justify-content: space-between;
+  width: 95%;
+`
 
 export const Title = styled.div`
   display: flex;

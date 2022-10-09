@@ -8,6 +8,7 @@ import {
   ContainerEye,
   Eyes,
   Light,
+  Wrapper,
 } from "./styles";
 import { BsInstagram, BsGithub, BsTwitter } from "../../styles/Icons";
 import { useRouter } from "next/router";
@@ -41,27 +42,28 @@ function Header(props) {
 
   return (
     <Container active={fixed}>
-      <Title>
-        <EntraptaWrapper onClick={() => router.push("/")}>
-          <ContainerEye>
-            <Eyes>
-              <Light />
-            </Eyes>
-            <Eyes>
-              <Light />
-            </Eyes>
-          </ContainerEye>
-        </EntraptaWrapper>
-      </Title>
-      <HeaderMenu>
-        <ul>
-          <li>About</li>
-          <li onClick={() => router.push("/blog")}>Blog</li>
-          <li>Projects</li>
-          <li>Contact</li>
-        </ul>
-        <ThemeSwitcher onClick={props.toggleTheme} checked={title} />
-        {/* <Switch
+      <Wrapper>
+        <Title>
+          <EntraptaWrapper onClick={() => router.push("/")}>
+            <ContainerEye>
+              <Eyes>
+                <Light />
+              </Eyes>
+              <Eyes>
+                <Light />
+              </Eyes>
+            </ContainerEye>
+          </EntraptaWrapper>
+        </Title>
+        <HeaderMenu>
+          <ul>
+            <li>About</li>
+            <li onClick={() => router.push("/blog")}>Blog</li>
+            <li>Projects</li>
+            <li>Contact</li>
+          </ul>
+          <ThemeSwitcher onClick={props.toggleTheme} checked={title} />
+          {/* <Switch
           onChange={props.toggleTheme}
           checked={title === "light-theme"}
           checkedIcon={<GiStripedSun />}
@@ -69,29 +71,30 @@ function Header(props) {
           height={10}
           width={30}
         /> */}
-        <SocialMedias>
-          <BsGithub
-            onClick={() =>
-              window.open("https://github.com/mooncoded", "_blank").focus()
-            }
-            size={17}
-          />
-          <BsInstagram
-            onClick={() =>
-              window
-                .open("https://instagram.com/twil1ghtmoon", "_blank")
-                .focus()
-            }
-            size={17}
-          />
-          <BsTwitter
-            onClick={() =>
-              window.open("https://twitter.com/m00ncoded", "_blank").focus()
-            }
-            size={17}
-          />
-        </SocialMedias>
-      </HeaderMenu>
+          <SocialMedias>
+            <BsGithub
+              onClick={() =>
+                window.open("https://github.com/mooncoded", "_blank").focus()
+              }
+              size={17}
+            />
+            <BsInstagram
+              onClick={() =>
+                window
+                  .open("https://instagram.com/twil1ghtmoon", "_blank")
+                  .focus()
+              }
+              size={17}
+            />
+            <BsTwitter
+              onClick={() =>
+                window.open("https://twitter.com/m00ncoded", "_blank").focus()
+              }
+              size={17}
+            />
+          </SocialMedias>
+        </HeaderMenu>
+      </Wrapper>
     </Container>
   );
 }

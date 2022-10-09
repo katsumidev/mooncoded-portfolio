@@ -38,10 +38,10 @@ function CustomCursor() {
       y: mousePos.y - 12.5,
     },
     hover: {
-      height: 80,
-      width: 80,
-      x: mousePos.x - 40,
-      y: mousePos.y - 40,
+      height: 60,
+      width: 60,
+      x: mousePos.x - 30,
+      y: mousePos.y - 30,
     },
   };
 
