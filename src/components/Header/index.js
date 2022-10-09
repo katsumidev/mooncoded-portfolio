@@ -10,7 +10,7 @@ import {
   Light,
   Wrapper,
 } from "./styles";
-import { BsInstagram, BsGithub, BsTwitter } from "../../styles/Icons";
+import { BsInstagram, BsGithub, BsTwitter, BsLinkedin } from "../../styles/Icons";
 import { useRouter } from "next/router";
 import { ThemeContext } from "styled-components";
 import nookies from "nookies";
@@ -24,7 +24,6 @@ function Header(props) {
 
   useEffect(() => {
     const { theme } = nookies.get("theme");
-
     setTheme(theme);
   }, [theme]);
 
@@ -57,10 +56,10 @@ function Header(props) {
         </Title>
         <HeaderMenu>
           <ul>
-            <li>About</li>
+            <li onClick={() => router.push("/about")}>About</li>
             <li onClick={() => router.push("/blog")}>Blog</li>
-            <li>Projects</li>
-            <li>Contact</li>
+            <li onClick={() => router.push("/projects")}>Projects</li>
+            <li onClick={() => router.push("/contact")}>Contact</li>
           </ul>
           <ThemeSwitcher onClick={props.toggleTheme} checked={title} />
           {/* <Switch
@@ -78,10 +77,10 @@ function Header(props) {
               }
               size={17}
             />
-            <BsInstagram
+            <BsLinkedin
               onClick={() =>
                 window
-                  .open("https://instagram.com/twil1ghtmoon", "_blank")
+                  .open("https://www.linkedin.com/in/mooncoded/", "_blank")
                   .focus()
               }
               size={17}

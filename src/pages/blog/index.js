@@ -5,6 +5,7 @@ import matter from "gray-matter";
 import { MainWrapper } from "../../styles/pages/Home";
 import PostCard from "../../components/PostCard";
 import { useRouter } from "next/router";
+import { Flip } from "react-reveal";
 
 export default function blog({ posts }) {
   const router = useRouter();
@@ -12,22 +13,24 @@ export default function blog({ posts }) {
   return (
     <div>
       <Head>
-        <title>Homepage</title>
+        <title>Moon Coded - Blog</title>
       </Head>
       <MainWrapper>
-        {posts.map((post, index) => {
-          return (
-            <PostCard
-              key={index}
-              date={post.data.date}
-              title={post.data.title}
-              image={post.data.image}
-              description={post.data.description}
-              categories={post.data.tags}
-              onClick={() => router.push(`/blog/${post.slug}`)}
-            />
-          );
-        })}
+        <Flip left>
+          {posts.map((post, index) => {
+            return (
+              <PostCard
+                key={index}
+                date={post.data.date}
+                title={post.data.title}
+                image={post.data.image}
+                description={post.data.description}
+                categories={post.data.tags}
+                onClick={() => router.push(`/blog/${post.slug}`)}
+              />
+            );
+          })}
+        </Flip>
       </MainWrapper>
     </div>
   );

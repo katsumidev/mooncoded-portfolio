@@ -35,6 +35,8 @@ export default class MyDocument extends Document {
             href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;500;600;700&display=swap"
             rel="stylesheet"
           ></link>
+          <link rel="shortcut icon" href="static/favicon.ico" />
+          <title>Moon Coded</title>
         </Head>
         <body>
           <script>0</script>

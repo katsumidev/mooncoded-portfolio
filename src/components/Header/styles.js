@@ -9,6 +9,7 @@ export const Container = styled.div`
   padding-right: 15px;
   top: 0;
   transition: .2s;
+  z-index: 999;
   color: ${(props) => props.theme.colors.mainText};
   height: ${(props) => (props.active ? "50px" : "60px")};
   width: 100vw;
