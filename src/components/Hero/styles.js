@@ -1,29 +1,29 @@
 import styled from "styled-components";
 
 export const Container = styled.div`
-  width: 100vw;
+position: relative;
+  max-width: 100vw;
   height: 100vh;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   padding: 20px;
-
   font-family: Arial, Helvetica, sans-serif !important;
+  overflow: hidden;
 `;
 
 export const Background = styled.div`
   position: fixed;
   width: 100vw;
   height: 100vh;
-  top: 0;
-  left: 0;
   background: transparent url(${(props) => props.image.src}) repeat 0 0;
   background-repeat: no-repeat;
   background-size: cover;
-  opacity: 0.1;
+  opacity: 0.09;
   visibility: visible;
-  z-index: -2;
+  z-index: -1;
+  overflow: hidden;
 `;
 
 export const Title = styled.div`
@@ -38,6 +38,11 @@ export const Title = styled.div`
     margin-right: 20px;
     margin-left: 20px;
     transition: 0.2s;
+
+    @media (max-width: 500px) {
+      margin-left: 10px;
+      margin-right: 10px;
+    }
   }
 
   :hover {
@@ -53,12 +58,18 @@ export const SubTitle = styled.div`
   flex-direction: row;
   justify-content: center;
   cursor: pointer;
+  gap: 2px;
 
   .stretch {
     transform: scale(1.3, 1);
     margin-right: 10px;
     margin-left: 10px;
     transition: 0.2s;
+
+    @media (max-width: 500px) {
+      margin-left: 6px;
+      margin-right: 6px;
+    }
   }
 
   :hover {
@@ -73,6 +84,10 @@ export const SubTitle = styled.div`
 
 export const Letter = styled.h1`
   font-size: 6.5rem;
+
+  @media (max-width: 500px) {
+    font-size: 4.5rem;
+  }
 `;
 
 export const Wrapper = styled.div`
@@ -84,15 +99,23 @@ export const About = styled.h3`
   font-size: 1.2rem;
   font-family: "Quicksand", sans-serif;
   color: ${(props) => props.theme.colors.mainText};
+  text-align: center;
+
+  @media (max-width: 500px) {
+    font-size: 1rem;
+  }
 
   span {
-    color: ${(props) => props.theme.colors.primary};
+    background: linear-gradient(
+      to right,
+      ${(props) => props.theme.colors.primary},
+      ${(props) => props.theme.colors.secundary}
+    );
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
     cursor: pointer;
     transition: 0.3s;
-
-    :hover {
-      filter: drop-shadow(0 0 2px ${(props) => props.theme.colors.primary});
-    }
   }
 `;
 
@@ -123,8 +146,11 @@ export const ViewButton = styled.div`
     height: 2px;
     width: 0%;
     border-radius: 20px;
-    background: ${(props) => props.theme.colors.primary};
-    filter: drop-shadow(0 0 1.5px ${(props) => props.theme.colors.primary});
+    background: linear-gradient(
+      to right,
+      ${(props) => props.theme.colors.primary},
+      ${(props) => props.theme.colors.secundary}
+    );
     transition: all 0.4s ease;
   }
 
@@ -160,12 +186,15 @@ export const ContactButton = styled.div`
     height: 2px;
     width: 0%;
     border-radius: 20px;
-    background: ${(props) => props.theme.colors.primary};
-    filter: drop-shadow(0 0 1.5px ${(props) => props.theme.colors.primary});
+    background: linear-gradient(
+      to right,
+      ${(props) => props.theme.colors.primary},
+      ${(props) => props.theme.colors.secundary}
+    );
     transition: all 0.4s ease;
   }
 
   :hover:before {
     width: 100%;
   }
-`
+`;

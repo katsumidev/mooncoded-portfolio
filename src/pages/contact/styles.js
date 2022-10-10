@@ -4,7 +4,11 @@ export const Container = styled.div`
   display: flex;
   flex-direction: row;
   justify-content: flex-end;
-  width: 100vw;
+
+  @media (max-width: 750px) {
+    flex-direction: column;
+    margin: 80px 0 0 0;
+  }
 `;
 
 export const LeftContainer = styled.div`
@@ -15,6 +19,37 @@ export const LeftContainer = styled.div`
   gap: 50px;
   left: 0;
   width: 50%;
+
+  @media (max-width: 750px) {
+    width: 100vw;
+  }
+
+  hr {
+    background: ${(props) => props.theme.colors.mainText};
+    width: 80%;
+  }
+`;
+
+export const Header = styled.div`
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 80%;
+  position: relative;
+
+  p {
+    text-transform: uppercase;
+    font-size: 1rem;
+    color: ${(props) => props.theme.colors.mainText};
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-weight: 900;
+    word-spacing: 10px;
+    white-space: nowrap;
+  }
 `;
 
 export const Main = styled.div`
@@ -23,7 +58,7 @@ export const Main = styled.div`
   align-items: center;
   width: 100%;
   max-width: 800px;
-  gap: 50px;
+  gap: 40px;
 `;
 
 export const InputData = styled.div`
@@ -39,8 +74,11 @@ export const InputData = styled.div`
     left: 0;
     height: 3px;
     width: 0%;
-    background: ${(props) => props.theme.colors.primary};
-    filter: drop-shadow(0 0 1.5px ${(props) => props.theme.colors.primary});
+    background: linear-gradient(
+      to right,
+      ${(props) => props.theme.colors.primary},
+      ${(props) => props.theme.colors.secundary}
+    );
     transition: all 0.4s ease;
   }
 
@@ -60,6 +98,8 @@ export const Input = styled.input`
   height: 100%;
   font-size: 12px;
   padding: 16px;
+  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+  border-radius: 4px;
 `;
 
 export const TextArea = styled.textarea`
@@ -75,6 +115,8 @@ export const TextArea = styled.textarea`
   max-height: 400px;
   font-size: 12px;
   padding: 16px;
+  border-radius: 4px;
+  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
 `;
 
 export const Title = styled.div`
@@ -84,7 +126,6 @@ export const Title = styled.div`
   font-family: Arial, Helvetica, sans-serif;
   color: ${(props) => props.theme.colors.mainText};
   cursor: pointer;
-  width: 80%;
   font-weight: unset;
 
   .stretch {
@@ -103,7 +144,12 @@ export const Title = styled.div`
 `;
 
 export const Letter = styled.h1`
-  font-size: 3.5rem;
+  font-size: 5.5rem;
+  opacity: ${(props) => props.theme.title === "light-theme" ? "0.2" : "0.1"};
+
+  @media (max-width: 900px) {
+    font-size: 4.5rem;
+  }
 `;
 
 export const SubmitButton = styled.button`
@@ -111,12 +157,18 @@ export const SubmitButton = styled.button`
   align-self: flex-end;
   position: relative;
   padding: 10px 15px;
-  border: 1px solid ${(props) => props.theme.colors.primary};
+  border: 1px solid;
+  border-image: linear-gradient(
+      45deg,
+      ${(props) => props.theme.colors.primary},
+      ${(props) => props.theme.colors.secundary}
+    )
+    1;
   background-color: transparent;
   display: inline-block;
   cursor: pointer;
-  color: ${(props) => props.theme.colors.primary};
   font-weight: 500;
+  color: ${(props) => props.theme.colors.primary};
   transition: all 0.2s ease;
   gap: 5px;
 
@@ -128,7 +180,11 @@ export const SubmitButton = styled.button`
     top: 0;
     left: 0;
     z-index: -1;
-    background: ${(props) => props.theme.colors.primary};
+    background: linear-gradient(
+      45deg,
+      ${(props) => props.theme.colors.primary},
+      ${(props) => props.theme.colors.secundary}
+    );
     transition: all 0.3s ease;
   }
 
@@ -166,3 +222,15 @@ export const Column = styled.div`
   gap: 10px;
   align-items: center;
 `;
+
+export const RightContainer = styled.div`
+  display: flex;
+  flex-direction: column;
+  right: 0;
+  width: 50%;
+
+  @media (max-width: 750px) {
+    width: 100vw;
+    margin: 40px 0 0 0;
+  }
+`

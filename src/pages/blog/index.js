@@ -2,19 +2,31 @@ import Head from "next/head";
 import fs from "fs";
 import path from "path";
 import matter from "gray-matter";
-import { MainWrapper } from "../../styles/pages/Home";
+import { Container, MainWrapper, Header, Title, Letter } from "./styles";
 import PostCard from "../../components/PostCard";
 import { useRouter } from "next/router";
 import { Flip } from "react-reveal";
+import { isMobile } from "react-device-detect";
+import { useEffect, useState } from "react";
 
 export default function blog({ posts }) {
   const router = useRouter();
 
   return (
-    <div>
+    <Container>
       <Head>
         <title>Moon Coded - Blog</title>
       </Head>
+      <Header>
+        <p>tutorials | documentation | hacks | life </p>
+        <Title>
+          <Letter className="stretch">B</Letter>
+          <Letter>L</Letter>
+          <Letter>O</Letter>
+          <Letter>G</Letter>
+        </Title>
+        <hr />
+      </Header>
       <MainWrapper>
         <Flip left>
           {posts.map((post, index) => {
@@ -32,7 +44,7 @@ export default function blog({ posts }) {
           })}
         </Flip>
       </MainWrapper>
-    </div>
+    </Container>
   );
 }
 

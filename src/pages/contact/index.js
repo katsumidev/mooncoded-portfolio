@@ -12,9 +12,12 @@ import {
   TextArea,
   Main,
   SubmitButton,
+  Header,
+  RightContainer
 } from "./styles";
 import dynamic from "next/dynamic";
-import emailjs from 'emailjs-com'
+import emailjs from "emailjs-com";
+import { Fade, Zoom } from "react-reveal";
 
 function contact() {
   const Map = useMemo(() =>
@@ -45,23 +48,37 @@ function contact() {
     <Container>
       <LeftContainer>
         <Main>
-          <Title>
-            <Letter>C</Letter>
-            <Letter>O</Letter>
-            <Letter className="stretch">N</Letter>
-            <Letter>T</Letter>
-            <Letter>A</Letter>
-            <Letter>C</Letter>
-            <Letter>T</Letter>
-          </Title>
+          <Header>
+            <p>freelance | questions | prices </p>
+            <Title>
+              <Letter>C</Letter>
+              <Letter>O</Letter>
+              <Letter className="stretch">N</Letter>
+              <Letter>T</Letter>
+              <Letter>A</Letter>
+              <Letter>C</Letter>
+              <Letter>T</Letter>
+            </Title>
+            <hr />
+          </Header>
           <Form onSubmit={sendEmail}>
             <Row>
               <InputData>
-                <Input type="text" name="username" placeholder="Your name" required></Input>
+                <Input
+                  type="text"
+                  name="username"
+                  placeholder="Your name"
+                  required
+                ></Input>
                 <div className="underline"></div>
               </InputData>
               <InputData>
-                <Input type="email" name="email" placeholder="Email" required></Input>
+                <Input
+                  type="email"
+                  name="email"
+                  placeholder="Email"
+                  required
+                ></Input>
                 <div className="underline"></div>
               </InputData>
             </Row>
@@ -71,7 +88,11 @@ function contact() {
                 <div className="underline"></div>
               </InputData>
               <InputData className="full-fill">
-                <TextArea name="message" placeholder="Message" required></TextArea>
+                <TextArea
+                  name="message"
+                  placeholder="Message"
+                  required
+                ></TextArea>
                 <div className="underline"></div>
               </InputData>
               <SubmitButton type="submit">
@@ -81,7 +102,9 @@ function contact() {
           </Form>
         </Main>
       </LeftContainer>
-      <Map />
+      <RightContainer>
+        <Map />
+      </RightContainer>
     </Container>
   );
 }

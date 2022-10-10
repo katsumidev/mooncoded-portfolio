@@ -1,3 +1,4 @@
+import { style } from "canvas-sketch-util/color";
 import styled from "styled-components";
 
 export const Container = styled.div`
@@ -8,12 +9,13 @@ export const Container = styled.div`
   flex-direction: row;
   padding-right: 15px;
   top: 0;
-  transition: .2s;
+  transition: 0.2s;
   z-index: 999;
   color: ${(props) => props.theme.colors.mainText};
   height: ${(props) => (props.active ? "50px" : "60px")};
   width: 100vw;
-  background-color: ${(props) => (props.active ? props.theme.colors.background : "transparent")};
+  background-color: ${(props) =>
+    props.active ? props.theme.colors.background : "transparent"};
   box-shadow: ${(props) =>
     props.active ? "rgba(100, 100, 111, 0.2) 0px 7px 29px 0px" : "none"};
 
@@ -24,9 +26,10 @@ export const Container = styled.div`
 
 export const Wrapper = styled.div`
   display: flex;
+  align-items: center;
   justify-content: space-between;
   width: 95%;
-`
+`;
 
 export const Title = styled.div`
   display: flex;
@@ -66,8 +69,11 @@ export const HeaderMenu = styled.div`
         height: 3px;
         width: 0%;
         border-radius: 20px;
-        background: ${props => props.theme.colors.primary};
-        filter: drop-shadow(0 0 1.5px ${props => props.theme.colors.primary});
+        background: linear-gradient(
+          to right,
+          ${(props) => props.theme.colors.primary},
+          ${(props) => props.theme.colors.secundary}
+        );
         transition: all 0.4s ease;
       }
 
@@ -90,20 +96,19 @@ export const SocialMedias = styled.div`
     transition: 0.2s;
 
     :hover {
-      filter: drop-shadow(0 0 2px ${props => props.theme.colors.primary});
-      fill: ${props => props.theme.colors.primary};
+      filter: drop-shadow(0 0 2px ${(props) => props.theme.colors.primary});
+      fill: ${(props) => props.theme.colors.primary};
     }
   }
 `;
 
 export const ThemeSwitcher = styled.div`
-  background-color: ${props => props.checked == "light-theme" ? props.theme.colors.primary : props.theme.colors.secundary};
   height: 20px;
   width: 20px;
   border-radius: 50%;
+  transition: 0.3s;
   cursor: pointer;
-`
-
+`;
 
 export const EntraptaWrapper = styled.div`
   display: flex;
@@ -132,12 +137,12 @@ export const Eyes = styled.div`
   position: relative;
   width: 30px;
   height: 30px;
-  background-color: #f6328f;
+  background-color: ${(props) => props.theme.colors.entraptaGlasses};
   border-radius: 100%;
   opacity: 1;
   overflow: hidden;
   transition: 0.2s;
-  filter: drop-shadow(0 0 5px #f6328f);
+  filter: drop-shadow(0 0 5px ${(props) => props.theme.colors.entraptaGlasses});
   margin: 7px 0;
   z-index: 1;
 `;
@@ -146,7 +151,7 @@ export const Light = styled.div`
   display: flex;
   width: 11px;
   height: 180px;
-  background-color: #f86fb0;
+  background-color: ${(props) => props.theme.colors.entraptaGlassesLight};
   transform: rotate(45deg);
   margin: -10px;
   animation: lightmove 2s infinite;
@@ -156,7 +161,7 @@ export const Light = styled.div`
     content: "";
     width: 3px;
     height: 200px;
-    background-color: #f86fb0;
+    background-color: ${(props) => props.theme.colors.entraptaGlassesLight};
     margin: 0 -5px;
     animation: lightmove 2s infinite;
     animation-fill-mode: forwards;
@@ -174,5 +179,80 @@ export const Light = styled.div`
     100% {
       margin-top: 40px;
     }
+  }
+`;
+
+export const MobileContainer = styled.div`
+  display: none;
+
+  @media (max-width: 750px) {
+    display: flex;
+  }
+`;
+
+export const MobileHeader = styled.div`
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100vw;
+  height: 100vh;
+  bottom: 0;
+  left: 0;
+  background-color: ${(props) => props.theme.colors.background};
+  position: fixed;
+  overflow: hidden;
+  gap: 40px;
+
+  ul {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    font-weight: 500;
+    font-size: 3em;
+    gap: 20px;
+    align-items: center;
+
+    li {
+      cursor: pointer;
+      position: relative;
+      transition: 0.2s;
+      padding: 6px;
+
+      :before {
+        content: "";
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        height: 3px;
+        width: 0%;
+        border-radius: 20px;
+        background: linear-gradient(
+          to right,
+          ${(props) => props.theme.colors.primary},
+          ${(props) => props.theme.colors.secundary}
+        );
+        transition: all 0.4s ease;
+      }
+
+      :hover:before {
+        width: 100%;
+      }
+    }
+  }
+`;
+
+export const DesktopHeader = styled.div`
+  @media (max-width: 750px) {
+    display: none;
+  }
+`;
+
+export const Menu = styled.div`
+  display: none;
+  z-index: 2999;
+
+  @media (max-width: 750px) {
+    display: flex;
   }
 `;

@@ -20,6 +20,6 @@ export const Icon = styled.div`
   margin: ${(props) => (props.checked == "light-theme" ? "0" : "-12px 0 0 0")};
   box-shadow: ${(props) =>
     props.checked == "light-theme"
-      ? "0 0 0 3px rgba(253, 153, 251, 0.9), 0 0 0 5px rgba(253, 153, 251, 0.5), 0 0 0 7px rgba(253, 153, 251, 0.3), 0 0 50px 8px rgba(253, 153, 251, 1)"
+      ? "0 0 0 3px rgba(141, 133, 254, 0.9), 0 0 0 5px rgba(141, 133, 254, 0.5), 0 0 0 7px rgba(141, 133, 254, 0.3), 0 0 50px 8px rgba(141, 133, 254, 1)"
       : "5px 5px 0 0 #d7ef33"};
 `;

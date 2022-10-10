@@ -5,10 +5,8 @@ export const Container = styled.div`
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  width: 90vw;
-  height: 100%;
-  margin: 150px auto;
-  gap: 50px;
+  margin: 80px 0;
+  gap: 40px;
 
   hr {
     background: ${(props) => props.theme.colors.mainText};
@@ -16,13 +14,22 @@ export const Container = styled.div`
   }
 `;
 
+export const MainWrapper = styled.div`
+  display: flex;
+  justify-content: center;
+  flex-direction: row;
+  flex-wrap: wrap;
+  gap: 20px;
+`;
+
 export const Header = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  width: 80%;
   position: relative;
+  width: 80%;
+  white-space: nowrap;
 
   p {
     text-transform: uppercase;
@@ -34,7 +41,15 @@ export const Header = styled.div`
     transform: translate(-50%, -50%);
     font-weight: 900;
     word-spacing: 10px;
-    white-space: nowrap;
+
+    @media (max-width: 750px) {
+      word-spacing: 5px;
+    }
+
+    @media (max-width: 500px) {
+      font-size: 9pt;
+      word-spacing: 0px;
+    }
   }
 `;
 
@@ -45,13 +60,7 @@ export const Title = styled.div`
   font-family: Arial, Helvetica, sans-serif;
   color: ${(props) => props.theme.colors.mainText};
   cursor: pointer;
-  width: auto;
   font-weight: unset;
-
-  .fill {
-    -webkit-text-fill-color: transparent;
-    -webkit-text-stroke: 2px ${(props) => props.theme.colors.mainText};
-  }
 
   .stretch {
     transform: scale(1.5, 1);
@@ -70,34 +79,9 @@ export const Title = styled.div`
 
 export const Letter = styled.h1`
   font-size: 7.5rem;
-  opacity: ${(props) => (props.theme.title === "light-theme" ? "0.2" : "0.1")};
-`;
+  opacity: ${(props) => props.theme.title === "light-theme" ? "0.2" : "0.1"};
 
-export const AboutMe = styled.div`
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  color: ${(props) => props.theme.colors.mainText};
-
-  span {
-    background: linear-gradient(
-      to right,
-      ${(props) => props.theme.colors.primary},
-      ${(props) => props.theme.colors.secundary}
-    );
-    background-clip: text;
-    -webkit-text-fill-color: transparent;
-    cursor: pointer;
-    transition: 0.3s;
-  }
-
-  h1 {
-    font-size: 2.5rem;
-  }
-
-  p {
-    margin-top: 20px;
-    width: 30%;
+  @media (max-width: 900px) {
+    font-size: 4.5rem;
   }
 `;

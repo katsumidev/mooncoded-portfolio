@@ -7,9 +7,21 @@ import { ThemeProvider } from "styled-components";
 import light from "../styles/themes/light";
 import dark from "../styles/themes/dark";
 import nookies from "nookies";
-import LoadingOverlay from "../components/LoadingOverlay";
 import CustomCursor from "../components/CustomCursor";
 import styled from "styled-components";
+import * as THREE from "three";
+
+import {
+  EffectComposer,
+  DepthOfField,
+  Bloom,
+  Noise,
+  Vignette,
+  BrightnessContrast,
+} from "@react-three/postprocessing";
+import { Canvas } from "@react-three/fiber";
+import Scene from "../components/Scene";
+import { OrbitControls } from "@react-three/drei";
 
 function MyApp({ Component, pageProps }) {
   const router = useRouter();
@@ -100,8 +112,32 @@ function MyApp({ Component, pageProps }) {
 
   return (
     <ThemeProvider theme={theme}>
-      {loading && <LoadingOverlay />}
-      <Background />
+      {theme === dark ? (
+        <>
+          <CanvasContainer>
+            <Canvas
+              camera={{ fov: 70, position: [0, 0, 30] }}
+              onCreated={({ gl, size, camera }) => {
+                if (size.width < 600) {
+                  camera.position.z = 45;
+                }
+              }}
+            >
+              <OrbitControls
+                enableZoom={false}
+                autoRotate={true}
+                autoRotateSpeed={0.5}
+                rotateSpeed={0.1}
+              ></OrbitControls>
+              <Scene />
+            </Canvas>
+          </CanvasContainer>
+          <Background />
+        </>
+      ) : (
+        <></>
+      )}
+
       <CustomCursor />
       <GlobalStyle />
       <Header toggleTheme={toggleTheme} />
@@ -109,6 +145,19 @@ function MyApp({ Component, pageProps }) {
     </ThemeProvider>
   );
 }
+
+export const CanvasContainer = styled.div`
+  position: fixed;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100vw;
+  height: 100vh;
+  visibility: visible;
+  background: transparent;
+  opacity: 0.2;
+  z-index: -1;
+`;
 
 export const Background = styled.div`
   position: fixed;

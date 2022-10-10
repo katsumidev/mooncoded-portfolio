@@ -21,12 +21,12 @@ export const Eyes = styled.div`
   position: relative;
   width: 30px;
   height: 30px;
-  background-color: #f6328f;
+  background-color: ${(props) => props.theme.colors.entraptaGlasses};
   border-radius: 100%;
   opacity: 1;
   overflow: hidden;
   transition: 0.2s;
-  filter: drop-shadow(0 0 5px #f6328f);
+  filter: drop-shadow(0 0 5px ${(props) => props.theme.colors.entraptaGlasses});
   margin: 7px 0;
   z-index: 1;
 `;
@@ -35,7 +35,7 @@ export const Light = styled.div`
   display: flex;
   width: 11px;
   height: 180px;
-  background-color: #f86fb0;
+  background-color: ${(props) => props.theme.colors.entraptaGlassesLight};
   transform: rotate(45deg);
   margin: -10px;
   animation: lightmove 2s infinite;
@@ -50,7 +50,7 @@ export const Light = styled.div`
     content: "";
     width: 3px;
     height: 200px;
-    background-color: #f86fb0;
+    background-color: ${(props) => props.theme.colors.entraptaGlassesLight};
     margin: 0 -5px;
     animation: lightmove 2s infinite;
     animation-fill-mode: forwards;
