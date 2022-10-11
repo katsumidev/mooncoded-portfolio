@@ -19,6 +19,7 @@ export const LeftContainer = styled.div`
   gap: 50px;
   left: 0;
   width: 50%;
+  margin: 80px 0 0 0;
 
   @media (max-width: 750px) {
     width: 100vw;
@@ -99,7 +100,7 @@ export const Input = styled.input`
   font-size: 12px;
   padding: 16px;
   box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
-  border-radius: 4px;
+  border-bottom: 3px solid ${(props) => props.theme.title === "light-theme" ? props.theme.colors.primary : "none"};
 `;
 
 export const TextArea = styled.textarea`
@@ -115,8 +116,8 @@ export const TextArea = styled.textarea`
   max-height: 400px;
   font-size: 12px;
   padding: 16px;
-  border-radius: 4px;
   box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+  border-bottom: 3px solid ${(props) => props.theme.title === "light-theme" ? props.theme.colors.primary : "none"};
 `;
 
 export const Title = styled.div`
@@ -157,7 +158,7 @@ export const SubmitButton = styled.button`
   align-self: flex-end;
   position: relative;
   padding: 10px 15px;
-  border: 1px solid;
+  border: 2px solid;
   border-image: linear-gradient(
       45deg,
       ${(props) => props.theme.colors.primary},
@@ -226,7 +227,8 @@ export const Column = styled.div`
 export const RightContainer = styled.div`
   display: flex;
   flex-direction: column;
-  right: 0;
+  justify-content: center;
+  align-items: center;
   width: 50%;
 
   @media (max-width: 750px) {

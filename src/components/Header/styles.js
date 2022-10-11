@@ -15,7 +15,7 @@ export const Container = styled.div`
   height: ${(props) => (props.active ? "50px" : "60px")};
   width: 100vw;
   background-color: ${(props) =>
-    props.active ? props.theme.colors.background : "transparent"};
+    props.active ? props.theme.colors.tertiary : "transparent"};
   box-shadow: ${(props) =>
     props.active ? "rgba(100, 100, 111, 0.2) 0px 7px 29px 0px" : "none"};
 
@@ -61,6 +61,13 @@ export const HeaderMenu = styled.div`
       transition: 0.2s;
       padding: 6px;
 
+      span {
+        font-size: 10px;
+        font-weight: 900;
+        margin-right: 3px;
+        color: ${(props) => props.theme.colors.primary};
+      }
+
       :before {
         content: "";
         position: absolute;
@@ -98,6 +105,7 @@ export const SocialMedias = styled.div`
     :hover {
       filter: drop-shadow(0 0 2px ${(props) => props.theme.colors.primary});
       fill: ${(props) => props.theme.colors.primary};
+      transform: scale(1.3);
     }
   }
 `;
@@ -199,7 +207,7 @@ export const MobileHeader = styled.div`
   height: 100vh;
   bottom: 0;
   left: 0;
-  background-color: ${(props) => props.theme.colors.background};
+  background-color: ${(props) => props.theme.colors.tertiary};
   position: fixed;
   overflow: hidden;
   gap: 40px;
@@ -218,6 +226,13 @@ export const MobileHeader = styled.div`
       position: relative;
       transition: 0.2s;
       padding: 6px;
+
+      span {
+        font-size: 1.5rem;
+        font-weight: 900;
+        margin-right: 3px;
+        color: ${(props) => props.theme.colors.primary};
+      }
 
       :before {
         content: "";

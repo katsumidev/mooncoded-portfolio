@@ -8,7 +8,7 @@ export default createGlobalStyle`
     }
 
     body {
-        background-color: ${(props) => props.theme.colors.background};
+        background: ${(props) => props.theme.colors.background};
         font-family:  'Quicksand', sans-serif;
     }
 `;

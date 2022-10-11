@@ -68,10 +68,18 @@ function Header(props) {
         <DesktopHeader>
           <HeaderMenu>
             <ul>
-              <li onClick={() => router.push("/about")}>About</li>
-              <li onClick={() => router.push("/blog")}>Blog</li>
-              <li onClick={() => router.push("/projects")}>Projects</li>
-              <li onClick={() => router.push("/contact")}>Contact</li>
+              <li onClick={() => router.push("/about")}>
+                <span>01. </span> About
+              </li>
+              <li onClick={() => router.push("/blog")}>
+                <span>02. </span> Blog
+              </li>
+              <li onClick={() => router.push("/projects")}>
+                <span>03. </span> Projects
+              </li>
+              <li onClick={() => router.push("/contact")}>
+                <span>04. </span> Contact
+              </li>
             </ul>
             <ThemeSwitcher onClick={props.toggleTheme} checked={title} />
             <SocialMedias>
@@ -106,16 +114,16 @@ function Header(props) {
             <MobileHeader>
               <ul>
                 <li onClick={() => router.push("/about") | setOpen(!open)}>
-                  About
+                  <span>01. </span> About
                 </li>
                 <li onClick={() => router.push("/blog") | setOpen(!open)}>
-                  Blog
+                  <span>02. </span> Blog
                 </li>
                 <li onClick={() => router.push("/projects") | setOpen(!open)}>
-                  Projects
+                  <span>03. </span> Projects
                 </li>
                 <li onClick={() => router.push("/contact") | setOpen(!open)}>
-                  Contact
+                  <span>04. </span> Contact
                 </li>
               </ul>
               <SocialMedias>

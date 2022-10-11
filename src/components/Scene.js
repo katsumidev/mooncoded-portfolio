@@ -9,7 +9,7 @@ function Scene() {
     <Suspense>
       <>
         <group>
-          <StarDustCrusaders count={8000} />
+          <StarDustCrusaders count={1000} />
         </group>
       </>
     </Suspense>

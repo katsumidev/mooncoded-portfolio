@@ -132,12 +132,10 @@ function MyApp({ Component, pageProps }) {
               <Scene />
             </Canvas>
           </CanvasContainer>
-          <Background />
         </>
       ) : (
         <></>
       )}
-
       <CustomCursor />
       <GlobalStyle />
       <Header toggleTheme={toggleTheme} />
@@ -171,7 +169,7 @@ export const Background = styled.div`
     url("http://assets.iceable.com/img/noise-transparent.png") repeat 0 0;
   background-repeat: repeat;
   animation: noise 1s infinite;
-  opacity: 2;
+  opacity: 1;
   visibility: visible;
   z-index: -1;
 

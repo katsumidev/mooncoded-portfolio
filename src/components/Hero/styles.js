@@ -20,7 +20,7 @@ export const Background = styled.div`
   background: transparent url(${(props) => props.image.src}) repeat 0 0;
   background-repeat: no-repeat;
   background-size: cover;
-  opacity: 0.09;
+  opacity: 0.1;
   visibility: visible;
   z-index: -1;
   overflow: hidden;

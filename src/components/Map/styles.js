@@ -2,9 +2,12 @@ import styled from "styled-components";
 import { MapContainer } from "react-leaflet";
 
 export const Container = styled.div`
-  width: 50%;
+  width: 40%;
   height: 100vh;
   right: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 
   @media (max-width: 750px) {
     position: relative;
@@ -17,13 +20,16 @@ export const Container = styled.div`
 export const Map = styled(MapContainer)`
   position: absolute;
   bottom: 0;
-  width: 50%;
-  height: calc(100% - 60px);
+  width: 45%;
+  height: 85%;
+  margin: 20px;
+  border: ${(props) => props.theme.colors.primary};
 
   @media (max-width: 750px) {
     position: relative;
     width: 100vw;
     height: 300px;
+    margin: 0;
   }
 `;
 
@@ -34,9 +40,9 @@ export const ContactInfo = styled.div`
   position: absolute;
   z-index: 100;
   font-size: 0.8rem;
-  top: 60px;
-  margin: 20px;
   z-index: 500;
+  left: 0;
+  margin: 20px;
   color: ${(props) => props.theme.colors.mainText};
   padding: 16px;
   font-weight: 500;
