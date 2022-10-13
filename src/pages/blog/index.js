@@ -2,12 +2,12 @@ import Head from "next/head";
 import fs from "fs";
 import path from "path";
 import matter from "gray-matter";
-import { Container, MainWrapper, Header, Title, Letter } from "./styles";
+import { Container, MainWrapper } from "./styles";
 import PostCard from "../../components/PostCard";
 import { useRouter } from "next/router";
-import { Flip } from "react-reveal";
-import { isMobile } from "react-device-detect";
-import { useEffect, useState } from "react";
+import { Fade, Flip, Zoom } from "react-reveal";
+import Tilt from "react-parallax-tilt";
+import PageTitle from "../../components/PageTitle";
 
 export default function blog({ posts }) {
   const router = useRouter();
@@ -17,32 +17,30 @@ export default function blog({ posts }) {
       <Head>
         <title>Moon Coded - Blog</title>
       </Head>
-      <Header>
-        <p>tutorials | documentation | hacks | life </p>
-        <Title>
-          <Letter className="stretch">B</Letter>
-          <Letter>L</Letter>
-          <Letter>O</Letter>
-          <Letter>G</Letter>
-        </Title>
-        <hr />
-      </Header>
+      <PageTitle title="blog" stretchedLetter="b" overlayTitle="tutorials | documentation | hacks | life" />
       <MainWrapper>
-        <Flip left>
+        <Zoom>
           {posts.map((post, index) => {
             return (
-              <PostCard
-                key={index}
-                date={post.data.date}
-                title={post.data.title}
-                image={post.data.image}
-                description={post.data.description}
-                categories={post.data.tags}
-                onClick={() => router.push(`/blog/${post.slug}`)}
-              />
+              <Tilt
+                tiltReverse={true}
+                tiltMaxAngleX={5}
+                tiltMaxAngleY={5}
+                gyroscope={true}
+              >
+                <PostCard
+                  key={index}
+                  date={post.data.date}
+                  title={post.data.title}
+                  image={post.data.image}
+                  description={post.data.description}
+                  categories={post.data.tags}
+                  onClick={() => router.push(`/blog/${post.slug}`)}
+                />
+              </Tilt>
             );
           })}
-        </Flip>
+        </Zoom>
       </MainWrapper>
     </Container>
   );

@@ -35,7 +35,6 @@ export const Map = styled(MapContainer)`
 
 export const ContactInfo = styled.div`
   width: 200px;
-  height: 120px;
   background-color: ${(props) => props.theme.colors.secundaryBackground};
   position: absolute;
   z-index: 100;
@@ -67,7 +66,6 @@ export const ContactInfo = styled.div`
 
   @media (max-width: 600px) {
     width: 200px;
-    height: 80px;
     font-size: 0.7rem;
     top: 0px;
     left: 0;

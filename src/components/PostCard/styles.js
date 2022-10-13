@@ -17,7 +17,7 @@ export const Container = styled.div`
 export const Info = styled.div`
   display: flex;
   flex-direction: column;
-  padding: 0.6rem;
+  padding: 0.6rem 0.2rem;
   border-radius: 3px;
   height: auto;
 
@@ -39,9 +39,18 @@ export const Info = styled.div`
   }
 `;
 
-export const Date = styled.p`
+export const Date = styled.div`
+  display: flex;
+  flex-direction: row;
+  align-items: center;
   font-weight: 200;
+  align-self: flex-start;
   opacity: 0.7;
+  margin: 10px 0;
+  font-weight: 600;
+  font-size: 1rem;
+  color: ${(props) => props.theme.colors.mainText};
+  gap: 5px;
 `;
 
 export const Title = styled.b`
@@ -77,7 +86,7 @@ export const ImageWrapper = styled.div`
 
   img {
     display: block;
-    border-radius: 10px;
+    border-radius: 4px;
     width: 100%;
     height: auto;
   }
@@ -93,7 +102,7 @@ export const Overlay = styled.div`
   width: 100%;
   opacity: 0;
   transition: 0.5s ease;
-  border-radius: 10px;
+  border-radius: 4px;
   background-color: rgba(0, 0, 0, 0.7);
 
   ${Container}:hover & {

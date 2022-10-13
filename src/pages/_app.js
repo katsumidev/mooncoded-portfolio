@@ -2,26 +2,18 @@ import GlobalStyle from "../styles/global";
 import "../styles/dracula.css";
 import Header from "../components/Header";
 import { useRouter } from "next/router";
-import { useEffect, useState } from "react";
+import { Suspense, useEffect, useState } from "react";
 import { ThemeProvider } from "styled-components";
 import light from "../styles/themes/light";
 import dark from "../styles/themes/dark";
 import nookies from "nookies";
 import CustomCursor from "../components/CustomCursor";
 import styled from "styled-components";
-import * as THREE from "three";
-
-import {
-  EffectComposer,
-  DepthOfField,
-  Bloom,
-  Noise,
-  Vignette,
-  BrightnessContrast,
-} from "@react-three/postprocessing";
 import { Canvas } from "@react-three/fiber";
 import Scene from "../components/Scene";
 import { OrbitControls } from "@react-three/drei";
+import Head from "next/head";
+import lines from "/public/static/assets/back.png"
 
 function MyApp({ Component, pageProps }) {
   const router = useRouter();
@@ -112,6 +104,10 @@ function MyApp({ Component, pageProps }) {
 
   return (
     <ThemeProvider theme={theme}>
+      <Head>
+        <title>Moon Coded</title>
+      </Head>
+      <Lines image={lines} />
       {theme === dark ? (
         <>
           <CanvasContainer>
@@ -144,6 +140,23 @@ function MyApp({ Component, pageProps }) {
   );
 }
 
+export const Lines = styled.div`
+  position: fixed;
+  width: 100vw;
+  height: 100vh;
+  background: transparent url(${(props) => props.image.src});
+  background-repeat: space;
+  background-size: 80vh;
+  background-repeat: repeat-y;
+  background-position: 0px 80px;
+  opacity: 0.01;
+  visibility: visible;
+  z-index: -1;
+  top: 0;
+  left: 50px;
+  overflow: hidden;
+`;
+
 export const CanvasContainer = styled.div`
   position: fixed;
   display: flex;
@@ -153,61 +166,8 @@ export const CanvasContainer = styled.div`
   height: 100vh;
   visibility: visible;
   background: transparent;
-  opacity: 0.2;
+  opacity: 0.3;
   z-index: -1;
-`;
-
-export const Background = styled.div`
-  position: fixed;
-  top: -50%;
-  left: -50%;
-  right: -50%;
-  bottom: -50%;
-  width: 200%;
-  height: 200vh;
-  background: transparent
-    url("http://assets.iceable.com/img/noise-transparent.png") repeat 0 0;
-  background-repeat: repeat;
-  animation: noise 1s infinite;
-  opacity: 1;
-  visibility: visible;
-  z-index: -1;
-
-  @keyframes noise {
-    0% {
-      transform: translate(0, 0);
-    }
-    10% {
-      transform: translate(-5%, -5%);
-    }
-    20% {
-      transform: translate(-10%, 5%);
-    }
-    30% {
-      transform: translate(5%, -10%);
-    }
-    40% {
-      transform: translate(-5%, 15%);
-    }
-    50% {
-      transform: translate(-10%, 5%);
-    }
-    60% {
-      transform: translate(15%, 0);
-    }
-    70% {
-      transform: translate(0, 10%);
-    }
-    80% {
-      transform: translate(-15%, 0);
-    }
-    90% {
-      transform: translate(10%, 5%);
-    }
-    100% {
-      transform: translate(5%, 0);
-    }
-  }
 `;
 
 export default MyApp;

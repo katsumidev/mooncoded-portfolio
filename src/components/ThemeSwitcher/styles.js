@@ -6,6 +6,7 @@ export const Container = styled.div`
   align-items: center;
   text-align: center;
   cursor: pointer;
+  z-index: 2999;
 `;
 
 export const Icon = styled.div`

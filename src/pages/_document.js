@@ -29,6 +29,7 @@ export default class MyDocument extends Document {
             name="viewport"
             content="width=device-width, initial-scale=1.0"
           />
+          <meta name="darkreader-lock" />
           <link rel="preconnect" href="https://fonts.googleapis.com" />
           <link rel="preconnect" href="https://fonts.gstatic.com" />
           <link
@@ -36,7 +37,6 @@ export default class MyDocument extends Document {
             rel="stylesheet"
           ></link>
           <link rel="shortcut icon" href="static/favicon.ico" />
-          <title>Moon Coded</title>
         </Head>
         <body>
           <script>0</script>

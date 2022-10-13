@@ -24,33 +24,6 @@ export const LeftContainer = styled.div`
   @media (max-width: 750px) {
     width: 100vw;
   }
-
-  hr {
-    background: ${(props) => props.theme.colors.mainText};
-    width: 80%;
-  }
-`;
-
-export const Header = styled.div`
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  width: 80%;
-  position: relative;
-
-  p {
-    text-transform: uppercase;
-    font-size: 1rem;
-    color: ${(props) => props.theme.colors.mainText};
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    font-weight: 900;
-    word-spacing: 10px;
-    white-space: nowrap;
-  }
 `;
 
 export const Main = styled.div`
@@ -118,39 +91,6 @@ export const TextArea = styled.textarea`
   padding: 16px;
   box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
   border-bottom: 3px solid ${(props) => props.theme.title === "light-theme" ? props.theme.colors.primary : "none"};
-`;
-
-export const Title = styled.div`
-  display: flex;
-  flex-direction: row;
-  justify-content: flex-start;
-  font-family: Arial, Helvetica, sans-serif;
-  color: ${(props) => props.theme.colors.mainText};
-  cursor: pointer;
-  font-weight: unset;
-
-  .stretch {
-    transform: scale(1.5, 1);
-    margin-right: 10px;
-    margin-left: 10px;
-    transition: 0.2s;
-  }
-
-  :hover {
-    .stretch {
-      transform: scale(1, 1);
-      margin: 0px;
-    }
-  }
-`;
-
-export const Letter = styled.h1`
-  font-size: 5.5rem;
-  opacity: ${(props) => props.theme.title === "light-theme" ? "0.2" : "0.1"};
-
-  @media (max-width: 900px) {
-    font-size: 4.5rem;
-  }
 `;
 
 export const SubmitButton = styled.button`

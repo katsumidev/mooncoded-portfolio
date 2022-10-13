@@ -12,6 +12,7 @@ import {
   EntraptaWrapper,
 } from "./styles";
 import EntraptaEyes from "../EntraptaEyes";
+import {AiFillCalendar} from '../../styles/Icons'
 
 function PostCard(props) {
   var categories = props.categories.split(",");
@@ -27,7 +28,7 @@ function PostCard(props) {
         </EntraptaWrapper>
       </ImageWrapper>
       <Info>
-        <Date>{props.date}</Date>
+        <Date><AiFillCalendar /> {props.date}</Date>
         <h2>{props.title}</h2>
         <p>{props.description}</p>
         <TagWrapper>

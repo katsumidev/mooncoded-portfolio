@@ -13,6 +13,7 @@ import matter from "gray-matter";
 import Markdown from "markdown-to-jsx";
 import { AiFillCalendar } from "../../styles/Icons";
 import hljs from "highlight.js";
+import Head from "next/head";
 
 function blog({ data, content }) {
   useEffect(() => {
@@ -21,6 +22,9 @@ function blog({ data, content }) {
 
   return (
     <Container>
+      <Head>
+        <title>{data.title}</title>
+      </Head>
       <PostData>
         <span>
           <AiFillCalendar />

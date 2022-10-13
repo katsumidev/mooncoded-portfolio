@@ -16,7 +16,7 @@ import { BsEye, BsChat } from "../../styles/Icons";
 import { useRouter } from "next/router";
 
 function Hero() {
-  const router = useRouter()
+  const router = useRouter();
 
   return (
     <Container>
@@ -45,7 +45,7 @@ function Hero() {
           </About>
         </Flip>
         <Fade left delay={800}>
-          <ViewButton onClick={() => router.push("/projects")}>
+          <ViewButton onClick={() => router.push("/work")}>
             <BsEye /> check my projects
           </ViewButton>
         </Fade>

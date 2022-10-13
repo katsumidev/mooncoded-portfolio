@@ -25,6 +25,7 @@ import { ThemeContext } from "styled-components";
 import nookies from "nookies";
 import ThemeSwitcher from "../ThemeSwitcher";
 import { Turn as Hamburger } from "hamburger-react";
+import { Fade, Zoom } from "react-reveal";
 
 function Header(props) {
   const router = useRouter();
@@ -74,7 +75,7 @@ function Header(props) {
               <li onClick={() => router.push("/blog")}>
                 <span>02. </span> Blog
               </li>
-              <li onClick={() => router.push("/projects")}>
+              <li onClick={() => router.push("/work")}>
                 <span>03. </span> Projects
               </li>
               <li onClick={() => router.push("/contact")}>
@@ -113,46 +114,59 @@ function Header(props) {
           {open && (
             <MobileHeader>
               <ul>
-                <li onClick={() => router.push("/about") | setOpen(!open)}>
-                  <span>01. </span> About
-                </li>
-                <li onClick={() => router.push("/blog") | setOpen(!open)}>
-                  <span>02. </span> Blog
-                </li>
-                <li onClick={() => router.push("/projects") | setOpen(!open)}>
-                  <span>03. </span> Projects
-                </li>
-                <li onClick={() => router.push("/contact") | setOpen(!open)}>
-                  <span>04. </span> Contact
-                </li>
+                <Fade left>
+                  <li onClick={() => router.push("/about") | setOpen(!open)}>
+                    <span>01. </span> About
+                  </li>
+                </Fade>
+                <Fade left delay={100}>
+                  <li onClick={() => router.push("/blog") | setOpen(!open)}>
+                    <span>02. </span> Blog
+                  </li>
+                </Fade>
+                <Fade left delay={200}>
+                  <li onClick={() => router.push("/work") | setOpen(!open)}>
+                    <span>03. </span> Projects
+                  </li>
+                </Fade>
+                <Fade left delay={300}>
+                  <li onClick={() => router.push("/contact") | setOpen(!open)}>
+                    <span>04. </span> Contact
+                  </li>
+                </Fade>
               </ul>
-              <SocialMedias>
-                <BsGithub
-                  onClick={() =>
-                    window
-                      .open("https://github.com/mooncoded", "_blank")
-                      .focus()
-                  }
-                  size={17}
-                />
-                <BsLinkedin
-                  onClick={() =>
-                    window
-                      .open("https://www.linkedin.com/in/mooncoded/", "_blank")
-                      .focus()
-                  }
-                  size={17}
-                />
-                <BsTwitter
-                  onClick={() =>
-                    window
-                      .open("https://twitter.com/m00ncoded", "_blank")
-                      .focus()
-                  }
-                  size={17}
-                />
-                <ThemeSwitcher onClick={props.toggleTheme} checked={title} />
-              </SocialMedias>
+              <Zoom delay={500}>
+                <SocialMedias>
+                  <BsGithub
+                    onClick={() =>
+                      window
+                        .open("https://github.com/mooncoded", "_blank")
+                        .focus()
+                    }
+                    size={17}
+                  />
+                  <BsLinkedin
+                    onClick={() =>
+                      window
+                        .open(
+                          "https://www.linkedin.com/in/mooncoded/",
+                          "_blank"
+                        )
+                        .focus()
+                    }
+                    size={17}
+                  />
+                  <BsTwitter
+                    onClick={() =>
+                      window
+                        .open("https://twitter.com/m00ncoded", "_blank")
+                        .focus()
+                    }
+                    size={17}
+                  />
+                  <ThemeSwitcher onClick={props.toggleTheme} checked={title} />
+                </SocialMedias>
+              </Zoom>
             </MobileHeader>
           )}
         </MobileContainer>
