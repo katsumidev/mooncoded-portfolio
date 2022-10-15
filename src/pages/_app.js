@@ -38,7 +38,8 @@ function MyApp({ Component, pageProps }) {
     }
 
     setTheme(theme === `"dark"` ? dark : light);
-  }, theme);
+  }, [theme]);
+
 
   const toggleTheme = () => {
     const { theme } = nookies.get("theme");
@@ -169,5 +170,16 @@ export const CanvasContainer = styled.div`
   opacity: 0.3;
   z-index: -1;
 `;
+
+export async function getServerSideProps(ctx) {
+  const cookies = nookies.get(ctx)
+
+  nookies.set(ctx, 'theme', JSON.stringify("dark"), {
+    maxAge: 30 * 24 * 60 * 60,
+    path: '/',
+  })
+
+  return { cookies }
+}
 
 export default MyApp;
