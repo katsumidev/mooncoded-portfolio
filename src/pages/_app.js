@@ -38,7 +38,7 @@ function MyApp({ Component, pageProps }) {
     }
 
     setTheme(theme === `"dark"` ? dark : light);
-  }, []);
+  }, theme);
 
   const toggleTheme = () => {
     const { theme } = nookies.get("theme");
@@ -103,7 +103,7 @@ function MyApp({ Component, pageProps }) {
   });
 
   return (
-    <ThemeProvider theme={theme}>
+    <ThemeProvider defaultTheme={dark} theme={theme}>
       <Head>
         <title>Moon Coded</title>
       </Head>
