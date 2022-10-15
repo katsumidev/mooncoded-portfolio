@@ -15,7 +15,7 @@ import Head from "next/head";
 import lines from "/public/static/assets/back.png";
 
 function MyApp({ Component, pageProps }) {
-  const [theme, setTheme] = useState(light);
+  const [theme, setTheme] = useState(dark);
 
   useEffect(() => {
     const { theme } = nookies.get("theme");
