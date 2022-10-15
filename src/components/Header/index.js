@@ -24,7 +24,7 @@ import { useRouter } from "next/router";
 import { ThemeContext } from "styled-components";
 import nookies from "nookies";
 import ThemeSwitcher from "../ThemeSwitcher";
-import { Turn as Hamburger } from "hamburger-react";
+import { Sling as Hamburger } from "hamburger-react";
 import { Fade, Zoom } from "react-reveal";
 
 function Header(props) {
@@ -75,11 +75,8 @@ function Header(props) {
               <li onClick={() => router.push("/blog")}>
                 <span>02. </span> Blog
               </li>
-              <li onClick={() => router.push("/work")}>
-                <span>03. </span> Projects
-              </li>
               <li onClick={() => router.push("/contact")}>
-                <span>04. </span> Contact
+                <span>03. </span> Contact
               </li>
             </ul>
             <ThemeSwitcher onClick={props.toggleTheme} checked={title} />
@@ -112,7 +109,7 @@ function Header(props) {
             <Hamburger toggled={open} toggle={setOpen} />
           </Menu>
           {open && (
-            <MobileHeader>
+            <MobileHeader key={Math.random()}>
               <ul>
                 <Fade left>
                   <li onClick={() => router.push("/about") | setOpen(!open)}>
@@ -124,14 +121,9 @@ function Header(props) {
                     <span>02. </span> Blog
                   </li>
                 </Fade>
-                <Fade left delay={200}>
-                  <li onClick={() => router.push("/work") | setOpen(!open)}>
-                    <span>03. </span> Projects
-                  </li>
-                </Fade>
                 <Fade left delay={300}>
                   <li onClick={() => router.push("/contact") | setOpen(!open)}>
-                    <span>04. </span> Contact
+                    <span>03. </span> Contact
                   </li>
                 </Fade>
               </ul>

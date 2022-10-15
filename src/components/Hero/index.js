@@ -10,6 +10,8 @@ import {
   Background,
   ViewButton,
   ContactButton,
+  HeroFooter,
+  Main
 } from "./styles";
 import { Fade, Flip, Zoom } from "react-reveal";
 import { BsEye, BsChat } from "../../styles/Icons";
@@ -22,38 +24,42 @@ function Hero() {
     <Container>
       <Background image={background} />
       <Wrapper>
-        <Fade top>
-          <Title>
-            <Letter className="stretch">M</Letter>
-            <Letter>O</Letter>
-            <Letter>O</Letter>
-            <Letter className="stretch">N</Letter>
-          </Title>
-        </Fade>
-        <Fade top delay={100}>
-          <SubTitle>
-            <Letter>C</Letter>
-            <Letter>O</Letter>
-            <Letter>D</Letter>
-            <Letter className="stretch">E</Letter>
-            <Letter className="stretch">D</Letter>
-          </SubTitle>
-        </Fade>
-        <Flip top delay={600}>
-          <About>
-            Front-end web <span>developer</span>, UI/UX Designer & artist ✍️
-          </About>
-        </Flip>
-        <Fade left delay={800}>
-          <ViewButton onClick={() => router.push("/work")}>
-            <BsEye /> check my projects
-          </ViewButton>
-        </Fade>
-        <Fade right delay={800}>
-          <ContactButton onClick={() => router.push("/contact")}>
-            <BsChat /> talk with me
-          </ContactButton>
-        </Fade>
+        <Main>
+          <Fade top>
+            <Title>
+              <Letter className="stretch">M</Letter>
+              <Letter>O</Letter>
+              <Letter>O</Letter>
+              <Letter className="stretch">N</Letter>
+            </Title>
+          </Fade>
+          <Fade top delay={100}>
+            <SubTitle>
+              <Letter>C</Letter>
+              <Letter>O</Letter>
+              <Letter>D</Letter>
+              <Letter className="stretch">E</Letter>
+              <Letter className="stretch">D</Letter>
+            </SubTitle>
+          </Fade>
+          <Flip top delay={600}>
+            <About>
+              Front-end web <span>developer</span>, UI/UX Designer & artist ✍️
+            </About>
+          </Flip>
+        </Main>
+        <HeroFooter>
+          <Fade left delay={800}>
+            <ViewButton onClick={() => router.push("/about")}>
+              <BsEye /> see more about me
+            </ViewButton>
+          </Fade>
+          <Fade right delay={800}>
+            <ContactButton onClick={() => router.push("/contact")}>
+              <BsChat /> talk with me
+            </ContactButton>
+          </Fade>
+        </HeroFooter>
       </Wrapper>
     </Container>
   );

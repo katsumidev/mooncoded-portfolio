@@ -2,12 +2,11 @@ import React, { useContext } from "react";
 import { TileLayer, Marker, Popup } from "react-leaflet";
 import L from "leaflet";
 import { Container, Map, ContactInfo } from "./styles";
-import marker from "/public/static/assets/marker.png";
 import "leaflet/dist/leaflet.css";
 import { AiFillPhone, MdEmail } from "../../styles/Icons";
 import { ThemeContext } from "styled-components";
 
-function map() {
+function MapComp() {
   const { title } = useContext(ThemeContext);
 
   const MarkerIcon = L.icon({
@@ -74,4 +73,4 @@ function map() {
   );
 }
 
-export default map;
+export default MapComp;

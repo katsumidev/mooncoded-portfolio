@@ -10,30 +10,41 @@ import {
   Overlay,
   ImageWrapper,
   EntraptaWrapper,
+  ImageComp,
 } from "./styles";
 import EntraptaEyes from "../EntraptaEyes";
-import {AiFillCalendar} from '../../styles/Icons'
+import { AiFillCalendar } from "../../styles/Icons";
 
 function PostCard(props) {
   var categories = props.categories.split(",");
 
+  const myLoader = () => {
+    return props.image;
+  };
+
   return (
     <Container onClick={props.onClick}>
-      {/* Using a functional prop to make the onClick function work */}
       <ImageWrapper>
-        <img alt={props.title} src={props.image} />
+        <ImageComp
+          loader={myLoader}
+          alt={props.title}
+          src={props.image}
+          layout="fill"
+        />
         <Overlay />
         <EntraptaWrapper>
           <EntraptaEyes />
         </EntraptaWrapper>
       </ImageWrapper>
       <Info>
-        <Date><AiFillCalendar /> {props.date}</Date>
+        <Date>
+          <AiFillCalendar /> {props.date}
+        </Date>
         <h2>{props.title}</h2>
         <p>{props.description}</p>
         <TagWrapper>
           {categories.map((category) => {
-            return <Tag title={category} />;
+            return <Tag key={category} title={category} />;
           })}
         </TagWrapper>
       </Info>

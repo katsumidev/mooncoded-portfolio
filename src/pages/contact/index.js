@@ -11,17 +11,17 @@ import {
   Main,
   SubmitButton,
   RightContainer,
-} from "./styles";
+} from "../../styles/pages/Contact";
 import dynamic from "next/dynamic";
 import emailjs from "emailjs-com";
-import { Fade, Zoom } from "react-reveal";
 import Head from "next/head";
 import PageTitle from "../../components/PageTitle";
+import { motion } from "framer-motion";
 
-function contact() {
+function Contact() {
   const Map = useMemo(() =>
     dynamic(() => import("../../components/Map"), { ssr: false })
-  );
+  , []);
 
   const sendEmail = (e) => {
     emailjs
@@ -55,45 +55,68 @@ function contact() {
             stretchedLetter="n"
             overlayTitle="freelance | questions | prices"
           />
-            <Form onSubmit={sendEmail}>
-              <Row>
-                <InputData>
-                  <Input
-                    type="text"
-                    name="username"
-                    placeholder="Your name"
-                    required
-                  ></Input>
-                  <div className="underline"></div>
-                </InputData>
-                <InputData>
-                  <Input
-                    type="email"
-                    name="email"
-                    placeholder="Email"
-                    required
-                  ></Input>
-                  <div className="underline"></div>
-                </InputData>
-              </Row>
-              <Column>
-                <InputData name="subject" className="full-fill">
-                  <Input type="text" placeholder="Subject" required></Input>
-                  <div className="underline"></div>
-                </InputData>
-                <InputData className="full-fill">
-                  <TextArea
-                    name="message"
-                    placeholder="Message"
-                    required
-                  ></TextArea>
-                  <div className="underline"></div>
-                </InputData>
-                <SubmitButton type="submit">
-                  <span>Submit</span>
-                </SubmitButton>
-              </Column>
-            </Form>
+          <Form onSubmit={sendEmail}>
+            <Row>
+              <InputData
+                as={motion.div}
+                initial={{ opacity: 0, scale: 0.5 }}
+                animate={{ opacity: 1, scale: 1 }}
+                transition={{ duration: 0.5 }}
+              >
+                <Input
+                  type="text"
+                  name="username"
+                  placeholder="Your name"
+                  required
+                ></Input>
+                <div className="underline"></div>
+              </InputData>
+              <InputData
+                as={motion.div}
+                initial={{ opacity: 0, scale: 0.5 }}
+                animate={{ opacity: 1, scale: 1 }}
+                transition={{ duration: 0.7, delay: 0.3 }}
+              >
+                <Input
+                  type="email"
+                  name="email"
+                  placeholder="Email"
+                  required
+                ></Input>
+                <div className="underline"></div>
+              </InputData>
+            </Row>
+            <Column>
+              <InputData
+                as={motion.div}
+                initial={{ opacity: 0, scale: 0.5 }}
+                animate={{ opacity: 1, scale: 1 }}
+                transition={{ duration: 0.7, delay: 0.4 }}
+                name="subject"
+                className="full-fill"
+              >
+                <Input type="text" placeholder="Subject" required></Input>
+                <div className="underline"></div>
+              </InputData>
+              <InputData
+                as={motion.div}
+                initial={{ opacity: 0, scale: 0.5 }}
+                animate={{ opacity: 1, scale: 1 }}
+                transition={{ duration: 0.7, delay: 0.5 }}
+                className="full-fill"
+              >
+                <TextArea
+                  name="message"
+                  placeholder="Message"
+                  required
+                ></TextArea>
+                <div className="underline"></div>
+              </InputData>
+              <SubmitButton type="submit">
+                <span>Submit</span>
+              </SubmitButton>
+            </Column>
+          </Form>
         </Main>
       </LeftContainer>
       <RightContainer>
@@ -103,4 +126,4 @@ function contact() {
   );
 }
 
-export default contact;
+export default Contact;

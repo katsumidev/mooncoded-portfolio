@@ -1,6 +1,7 @@
 import Tilt from "react-parallax-tilt";
 import React from "react";
 import { Container, Front, Back } from "./styles";
+import Image from "next/image";
 
 function SkillCard(props) {
   return (
@@ -13,17 +14,23 @@ function SkillCard(props) {
       <Container>
         <p>{props.data.title}</p>
         <div>
-          <img
+          <Image
             src={`/static/assets/${props.data.first.icon}`}
             alt={props.data.first.alt}
+            width={32}
+            height={32}
           />
-          <img
+          <Image
             src={`/static/assets/${props.data.second.icon}`}
             alt={props.data.second.alt}
+            width={32}
+            height={32}
           />
-          <img
+          <Image
             src={`/static/assets/${props.data.third.icon}`}
             alt={props.data.third.alt}
+            width={32}
+            height={32}
           />
         </div>
       </Container>

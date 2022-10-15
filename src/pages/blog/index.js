@@ -2,14 +2,14 @@ import Head from "next/head";
 import fs from "fs";
 import path from "path";
 import matter from "gray-matter";
-import { Container, MainWrapper } from "./styles";
+import { Container, MainWrapper } from "../../styles/pages/BlogMain";
 import PostCard from "../../components/PostCard";
 import { useRouter } from "next/router";
 import { Fade, Flip, Zoom } from "react-reveal";
 import Tilt from "react-parallax-tilt";
 import PageTitle from "../../components/PageTitle";
 
-export default function blog({ posts }) {
+export default function Blog({ posts }) {
   const router = useRouter();
 
   return (
@@ -17,7 +17,7 @@ export default function blog({ posts }) {
       <Head>
         <title>Moon Coded - Blog</title>
       </Head>
-      <PageTitle title="blog" stretchedLetter="b" overlayTitle="tutorials | documentation | hacks | life" />
+      <PageTitle title="blog" stretchedLetter="b" overlayTitle="tutorials | documentation | life" />
       <MainWrapper>
         <Zoom>
           {posts.map((post, index) => {
@@ -27,9 +27,9 @@ export default function blog({ posts }) {
                 tiltMaxAngleX={5}
                 tiltMaxAngleY={5}
                 gyroscope={true}
+                key={index}
               >
                 <PostCard
-                  key={index}
                   date={post.data.date}
                   title={post.data.title}
                   image={post.data.image}

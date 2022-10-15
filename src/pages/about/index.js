@@ -1,9 +1,9 @@
 import Head from "next/head";
 import React from "react";
-import { Fade, Zoom } from "react-reveal";
 import PageTitle from "../../components/PageTitle";
 import SkillCard from "../../components/SkillCard";
-import { Container, AboutMe, Skills } from "./styles";
+import { Container, AboutMe, Skills } from "../../styles/pages/About";
+import { motion } from "framer-motion";
 
 function about() {
   const data = {
@@ -68,45 +68,56 @@ function about() {
       />
       <AboutMe>
         <div>
-          <Fade delay={300}>
-            <h1>
-              👋 Hi! I'm <span>Moon</span>, a software developer
-            </h1>
-          </Fade>
-          <Fade delay={300}>
-            <p>
-              I've benn studying software development since 2018, I'm passionate
-              about solving problems and facing challenges, that's why I love
-              technology and software development since I was a child, I always
-              trying to work and study the most diverse types of technology that
-              I can.
-            </p>
-            <p>
-              I'm a quick learner, it doesn't matter if I dont know... i can
-              learn. I am currently focused on <span>web development</span>{" "}
-              using technologies such as:
-            </p>
-          </Fade>
+          <motion.h1
+            initial={{ opacity: 0, scale: 0.5 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{ duration: 0.7 }}
+          >
+            👋 Hi! I&apos;m <span>Moon</span>, a software developer
+          </motion.h1>
+          <motion.p
+            initial={{ opacity: 0, scale: 0.5 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{ duration: 0.8 }}
+          >
+            I&apos;ve benn studying software development since 2018, I&apos;m passionate
+            about solving problems and facing challenges, that&apos;s why I love
+            technology and software development since I was a child, I always
+            trying to work and study the most diverse types of technology that I
+            can.
+          </motion.p>
+          <motion.p
+            initial={{ opacity: 0, scale: 0.5 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{ duration: 0.8, delay: 0.2 }}
+          >
+            I&apos;m a quick learner, it doesn&apos;t matter if I dont know... i can
+            learn. I am currently focused on <span>web development</span> using
+            technologies such as:
+          </motion.p>
         </div>
-        <Zoom delay={300}>
-          <Skills>
-            <SkillCard data={data.cardOne} />
-            <SkillCard data={data.cardTwo} />
-            <SkillCard data={data.cardThree} />
-          </Skills>
-        </Zoom>
-
+        <Skills
+          as={motion.div}
+          initial={{ opacity: 0, scale: 0.5 }}
+          animate={{ opacity: 1, scale: 1 }}
+          transition={{ duration: 0.8, delay: 0.3 }}
+        >
+          <SkillCard data={data.cardOne} />
+          <SkillCard data={data.cardTwo} />
+          <SkillCard data={data.cardThree} />
+        </Skills>
         <div>
-          <Fade delay={300}>
-            <p>
-              I LOVE to create new and different things from scratch, that's why
-              I've chosen the development career, tech makes possible to create
-              an infinitude of things, things that help society in every kind of
-              way, since from entertaining to medicine, with technology
-              EVERYTHING is possible ✨ I'm obsessed with technology, maybe a
-              little too much :p
-            </p>
-          </Fade>
+          <motion.p
+            initial={{ opacity: 0, scale: 0.5 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{ duration: 0.8, delay: 0.4 }}
+          >
+            I LOVE to create new and different things from scratch, that&apos;s why
+            I&apos;ve chosen the development career, tech makes possible to create an
+            infinitude of things, things that help society in every kind of way,
+            since from entertaining to medicine, with technology EVERYTHING is
+            possible ✨ I&apos;m obsessed with technology, maybe a little too much :p
+          </motion.p>
         </div>
       </AboutMe>
     </Container>

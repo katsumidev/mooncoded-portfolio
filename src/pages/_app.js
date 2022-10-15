@@ -13,11 +13,9 @@ import { Canvas } from "@react-three/fiber";
 import Scene from "../components/Scene";
 import { OrbitControls } from "@react-three/drei";
 import Head from "next/head";
-import lines from "/public/static/assets/back.png"
+import lines from "/public/static/assets/back.png";
 
 function MyApp({ Component, pageProps }) {
-  const router = useRouter();
-  const [loading, setLoading] = useState(false);
   const [theme, setTheme] = useState(light);
 
   useEffect(() => {
@@ -37,7 +35,7 @@ function MyApp({ Component, pageProps }) {
       );
     }
 
-    setTheme(theme === `"dark"` ? light : dark);
+    setTheme(theme === `"dark"` ? dark : dark);
   }, theme);
 
   const toggleTheme = () => {
@@ -59,48 +57,6 @@ function MyApp({ Component, pageProps }) {
 
     setTheme(theme === `"dark"` ? light : dark);
   };
-
-  useEffect(() => {
-    let timer;
-
-    const handleStart = () => {
-      timer = setTimeout(() => {
-        setLoading(true);
-      }, 300);
-    };
-
-    const handleComplete = () => {
-      if (timer) {
-        clearTimeout(timer);
-      }
-
-      setTimeout(() => {
-        if (loading) {
-          setLoading(false);
-        }
-      }, 1000);
-    };
-
-    router.events.on("routeChangeStart", handleStart);
-    router.events.on("routeChangeComplete", handleComplete);
-    router.events.on("routeChangeError", handleComplete);
-
-    return () => {
-      router.events.off("routeChangeStart", handleStart);
-      router.events.off("routeChangeComplete", handleComplete);
-      router.events.off("routeChangeError", handleComplete);
-
-      if (timer) {
-        clearTimeout(timer);
-      }
-
-      setTimeout(() => {
-        if (loading) {
-          setLoading(false);
-        }
-      }, 1000);
-    };
-  });
 
   return (
     <ThemeProvider theme={theme}>

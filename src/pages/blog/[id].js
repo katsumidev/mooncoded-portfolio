@@ -15,7 +15,7 @@ import { AiFillCalendar } from "../../styles/Icons";
 import hljs from "highlight.js";
 import Head from "next/head";
 
-function blog({ data, content }) {
+function Blog({ data, content }) {
   useEffect(() => {
     hljs.initHighlighting();
   }, []);
@@ -77,4 +77,4 @@ export const getStaticPaths = async () => {
   };
 };
 
-export default blog;
+export default Blog;

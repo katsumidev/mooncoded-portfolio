@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import Image from "next/image";
 
 export const Container = styled.div`
   display: flex;
@@ -83,14 +84,15 @@ export const TagWrapper = styled.div`
 
 export const ImageWrapper = styled.div`
   position: relative;
-
-  img {
-    display: block;
-    border-radius: 4px;
-    width: 100%;
-    height: auto;
-  }
+  display: block;
+  border-radius: 4px;
+  width: 100%;
+  height: 175px;
 `;
+
+export const ImageComp = styled(Image)`
+  border-radius: 4px;
+`
 
 export const Overlay = styled.div`
   position: absolute;

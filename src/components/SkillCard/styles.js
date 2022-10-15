@@ -27,9 +27,4 @@ export const Container = styled.div`
     gap: 15px;
     transition: 0.2s;
   }
-
-  img {
-    width: 32px;
-    height: auto;
-  }
 `;

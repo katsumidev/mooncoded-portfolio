@@ -203,14 +203,31 @@ export const MobileHeader = styled.div`
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  width: 100vw;
-  height: 100vh;
-  bottom: 0;
-  left: 0;
   background-color: ${(props) => props.theme.colors.tertiary};
   position: fixed;
   overflow: hidden;
+  width: 100vw;
+  height: 100vh;
   gap: 40px;
+  bottom: 0;
+  left: 0;
+  animation: open 0.4s ease-out;
+  transform-origin: 100% 0;
+  -webkit-animation-fill-mode: forwards; /* Chrome 16+, Safari 4+ */
+  -moz-animation-fill-mode: forwards; /* FF 5+ */
+  -o-animation-fill-mode: forwards; /* Not implemented yet */
+  -ms-animation-fill-mode: forwards; /* IE 10+ */
+  animation-fill-mode: forwards; /* When the spec is finished */
+
+  @keyframes open {
+    0% {
+      transform: scale(0);
+      border-radius: 50%;
+    }
+    100% {
+      transform: scale(1);
+    }
+  }
 
   ul {
     list-style: none;

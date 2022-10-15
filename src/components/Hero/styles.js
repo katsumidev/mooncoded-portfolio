@@ -93,6 +93,26 @@ export const Letter = styled.h1`
 export const Wrapper = styled.div`
   width: fit-content;
   position: relative;
+
+  @media (max-width: 450px) {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+  }
+`;
+
+export const Main = styled.div`
+  @media (max-width: 450px) {
+    width: 100vw;
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
 `;
 
 export const About = styled.h3`
@@ -138,6 +158,12 @@ export const ViewButton = styled.div`
     margin-top: 4px;
   }
 
+  @media (max-width: 450px) {
+    bottom: 0;
+    position: relative;
+    width: fit-content;
+  }
+
   :before {
     content: "";
     position: absolute;
@@ -178,6 +204,12 @@ export const ContactButton = styled.div`
     margin-top: 4px;
   }
 
+  @media (max-width: 450px) {
+    bottom: 0;
+    position: relative;
+    width: fit-content;
+  }
+
   :before {
     content: "";
     position: absolute;
@@ -196,5 +228,16 @@ export const ContactButton = styled.div`
 
   :hover:before {
     width: 100%;
+  }
+`;
+
+export const HeroFooter = styled.div`
+  @media (max-width: 450px) {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
   }
 `;
