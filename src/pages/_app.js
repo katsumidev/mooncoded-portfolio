@@ -27,7 +27,7 @@ function MyApp({ Component, pageProps }) {
       nookies.set(
         {sameSite: true},
         "theme",
-        JSON.stringify(theme === `"dark"` ? "light" : "dark")
+        JSON.stringify(theme === `"dark"` ? "dark" : "light")
       );
     } else {
       nookies.set(
@@ -47,7 +47,7 @@ function MyApp({ Component, pageProps }) {
       nookies.set(
         {sameSite: true},
         "theme",
-        JSON.stringify(theme === `"dark"` ? "light" : "dark")
+        JSON.stringify(theme === `"dark"` ? "dark" : "light")
       );
     } else {
       nookies.set(
