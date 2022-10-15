@@ -34,7 +34,7 @@ function MyApp({ Component, pageProps }) {
       );
     }
 
-    setTheme(theme === `"dark"` ? dark : light);
+    setTheme(dark);
   }, theme);
 
   const toggleTheme = () => {
