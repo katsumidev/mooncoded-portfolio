@@ -27,27 +27,7 @@ function MyApp({ Component, pageProps }) {
       nookies.set(
         {sameSite: true},
         "theme",
-        JSON.stringify(theme === `"light"` ? "dark" : "light")
-      );
-    } else {
-      nookies.set(
-        { maxAge: 30 * 24 * 60 * 60, sameSite: true },
-        "theme",
-        JSON.stringify("light")
-      );
-    }
-
-    setTheme(theme === `"light"` ? dark : light);
-  }, []);
-
-  const toggleTheme = () => {
-    const { theme } = nookies.get("theme");
-
-    if (theme) {
-      nookies.set(
-        {sameSite: true},
-        "theme",
-        JSON.stringify(theme === `"light"` ? "dark" : "light")
+        JSON.stringify(theme === `"dark"` ? "light" : "dark")
       );
     } else {
       nookies.set(
@@ -57,7 +37,27 @@ function MyApp({ Component, pageProps }) {
       );
     }
 
-    setTheme(theme === `"light"` ? dark : light);
+    setTheme(theme === `"dark"` ? light : dark);
+  }, []);
+
+  const toggleTheme = () => {
+    const { theme } = nookies.get("theme");
+
+    if (theme) {
+      nookies.set(
+        {sameSite: true},
+        "theme",
+        JSON.stringify(theme === `"dark"` ? "light" : "dark")
+      );
+    } else {
+      nookies.set(
+        { maxAge: 30 * 24 * 60 * 60, sameSite: true },
+        "theme",
+        JSON.stringify("dark")
+      );
+    }
+
+    setTheme(theme === `"dark"` ? light : dark);
   };
 
   useEffect(() => {
