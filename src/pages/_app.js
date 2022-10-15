@@ -18,7 +18,7 @@ import lines from "/public/static/assets/back.png"
 function MyApp({ Component, pageProps }) {
   const router = useRouter();
   const [loading, setLoading] = useState(false);
-  const [theme, setTheme] = useState(dark);
+  const [theme, setTheme] = useState(light);
 
   useEffect(() => {
     const { theme } = nookies.get("theme");
