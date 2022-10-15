@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { Container } from "./styles";
 import { motion } from "framer-motion";
-import { isMobile } from "react-device-detect";
 
 function CustomCursor() {
   const [mousePos, setMousePos] = useState({

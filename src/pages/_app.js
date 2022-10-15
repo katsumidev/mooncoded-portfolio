@@ -1,7 +1,6 @@
 import GlobalStyle from "../styles/global";
 import "../styles/dracula.css";
 import Header from "../components/Header";
-import { useRouter } from "next/router";
 import { Suspense, useEffect, useState } from "react";
 import { ThemeProvider } from "styled-components";
 import light from "../styles/themes/light";

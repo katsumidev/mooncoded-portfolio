@@ -9,6 +9,7 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@react-three/drei": "^9.34.4",
     "@react-three/fiber": "^8.8.9",
     "canvas-sketch-util": "^1.10.0",
     "cookies-next": "^2.1.1",
