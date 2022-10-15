@@ -1,6 +1,7 @@
 import GlobalStyle from "../styles/global";
 import "../styles/dracula.css";
 import Header from "../components/Header";
+import { useRouter } from "next/router";
 import { Suspense, useEffect, useState } from "react";
 import { ThemeProvider } from "styled-components";
 import light from "../styles/themes/light";
@@ -12,9 +13,11 @@ import { Canvas } from "@react-three/fiber";
 import Scene from "../components/Scene";
 import { OrbitControls } from "@react-three/drei";
 import Head from "next/head";
-import lines from "/public/static/assets/back.png";
+import lines from "/public/static/assets/back.png"
 
 function MyApp({ Component, pageProps }) {
+  const router = useRouter();
+  const [loading, setLoading] = useState(false);
   const [theme, setTheme] = useState(dark);
 
   useEffect(() => {
@@ -22,40 +25,82 @@ function MyApp({ Component, pageProps }) {
 
     if (theme) {
       nookies.set(
-        {},
+        {sameSite: true},
         "theme",
-        JSON.stringify(theme === `"dark"` ? "light" : "dark")
+        JSON.stringify(theme === `"light"` ? "dark" : "light")
       );
     } else {
       nookies.set(
-        { maxAge: 30 * 24 * 60 * 60 },
+        { maxAge: 30 * 24 * 60 * 60, sameSite: true },
         "theme",
-        JSON.stringify("dark")
+        JSON.stringify("light")
       );
     }
 
-    setTheme(dark);
-  }, theme);
+    setTheme(theme === `"light"` ? dark : light);
+  }, []);
 
   const toggleTheme = () => {
     const { theme } = nookies.get("theme");
 
     if (theme) {
       nookies.set(
-        {},
+        {sameSite: true},
         "theme",
-        JSON.stringify(theme === `"dark"` ? "light" : "dark")
+        JSON.stringify(theme === `"light"` ? "dark" : "light")
       );
     } else {
       nookies.set(
-        { maxAge: 30 * 24 * 60 * 60 },
+        { maxAge: 30 * 24 * 60 * 60, sameSite: true },
         "theme",
         JSON.stringify("dark")
       );
     }
 
-    setTheme(theme === `"dark"` ? light : dark);
+    setTheme(theme === `"light"` ? dark : light);
   };
+
+  useEffect(() => {
+    let timer;
+
+    const handleStart = () => {
+      timer = setTimeout(() => {
+        setLoading(true);
+      }, 300);
+    };
+
+    const handleComplete = () => {
+      if (timer) {
+        clearTimeout(timer);
+      }
+
+      setTimeout(() => {
+        if (loading) {
+          setLoading(false);
+        }
+      }, 1000);
+    };
+
+    router.events.on("routeChangeStart", handleStart);
+    router.events.on("routeChangeComplete", handleComplete);
+    router.events.on("routeChangeError", handleComplete);
+
+    return () => {
+      router.events.off("routeChangeStart", handleStart);
+      router.events.off("routeChangeComplete", handleComplete);
+      router.events.off("routeChangeError", handleComplete);
+
+      if (timer) {
+        clearTimeout(timer);
+      }
+
+      setTimeout(() => {
+        if (loading) {
+          setLoading(false);
+        }
+      }, 1000);
+    };
+  });
 
   return (
     <ThemeProvider theme={theme}>
