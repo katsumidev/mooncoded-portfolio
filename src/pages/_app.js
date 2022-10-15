@@ -18,7 +18,7 @@ import lines from "/public/static/assets/back.png"
 function MyApp({ Component, pageProps }) {
   const router = useRouter();
   const [loading, setLoading] = useState(false);
-  const [theme, setTheme] = useState(light);
+  const [theme, setTheme] = useState(dark);
 
   useEffect(() => {
     const { theme } = nookies.get("theme");
@@ -103,7 +103,7 @@ function MyApp({ Component, pageProps }) {
   });
 
   return (
-    <ThemeProvider defaultTheme={dark} theme={theme}>
+    <ThemeProvider theme={theme}>
       <Head>
         <title>Moon Coded</title>
       </Head>
