@@ -9,14 +9,14 @@ function PageTitle(props) {
   return (
     <Header
       as={motion.div}
-      initial={{ opacity: 0, scale: 0.5 }}
-      animate={{ opacity: 1, scale: 1 }}
-      transition={{ duration: 0.7 }}
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      transition={{ duration: 1 }}
     >
       <motion.p
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
-        transition={{ duration: 0.7, delay: 0.6 }}
+        transition={{ duration: 0.8, delay: 0.4 }}
       >
         {props.overlayTitle}
       </motion.p>
@@ -30,7 +30,7 @@ function PageTitle(props) {
       <motion.hr
         initial={{ opacity: 0, x: -1000, scale: 0.2 }}
         animate={{ opacity: 1, x: 0, scale: 1 }}
-        transition={{ duration: 0.7, delay: 0.3 }}
+        transition={{ duration: 0.5, delay: 0.2 }}
       />
     </Header>
   );

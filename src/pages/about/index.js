@@ -69,37 +69,37 @@ function about() {
       <AboutMe>
         <div>
           <motion.h1
-            initial={{ opacity: 0, scale: 0.5 }}
-            animate={{ opacity: 1, scale: 1 }}
-            transition={{ duration: 0.7 }}
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ duration: 0.8 }}
           >
             👋 Hi! I&apos;m <span>Moon</span>, a software developer
           </motion.h1>
           <motion.p
-            initial={{ opacity: 0, scale: 0.5 }}
-            animate={{ opacity: 1, scale: 1 }}
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
             transition={{ duration: 0.8 }}
           >
-            I&apos;ve benn studying software development since 2018, I&apos;m passionate
-            about solving problems and facing challenges, that&apos;s why I love
-            technology and software development since I was a child, I always
-            trying to work and study the most diverse types of technology that I
-            can.
+            I&apos;ve benn studying software development since 2018, I&apos;m
+            passionate about solving problems and facing challenges, that&apos;s
+            why I love technology and software development since I was a child,
+            I always trying to work and study the most diverse types of
+            technology that I can.
           </motion.p>
           <motion.p
-            initial={{ opacity: 0, scale: 0.5 }}
-            animate={{ opacity: 1, scale: 1 }}
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
             transition={{ duration: 0.8, delay: 0.2 }}
           >
-            I&apos;m a quick learner, it doesn&apos;t matter if I dont know... i can
-            learn. I am currently focused on <span>web development</span> using
-            technologies such as:
+            I&apos;m a quick learner, it doesn&apos;t matter if I dont know... i
+            can learn. I am currently focused on <span>web development</span>{" "}
+            using technologies such as:
           </motion.p>
         </div>
         <Skills
           as={motion.div}
-          initial={{ opacity: 0, scale: 0.5 }}
-          animate={{ opacity: 1, scale: 1 }}
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
           transition={{ duration: 0.8, delay: 0.3 }}
         >
           <SkillCard data={data.cardOne} />
@@ -108,15 +108,16 @@ function about() {
         </Skills>
         <div>
           <motion.p
-            initial={{ opacity: 0, scale: 0.5 }}
-            animate={{ opacity: 1, scale: 1 }}
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
             transition={{ duration: 0.8, delay: 0.4 }}
           >
-            I LOVE to create new and different things from scratch, that&apos;s why
-            I&apos;ve chosen the development career, tech makes possible to create an
-            infinitude of things, things that help society in every kind of way,
-            since from entertaining to medicine, with technology EVERYTHING is
-            possible ✨ I&apos;m obsessed with technology, maybe a little too much :p
+            I LOVE to create new and different things from scratch, that&apos;s
+            why I&apos;ve chosen the development career, tech makes possible to
+            create an infinitude of things, things that help society in every
+            kind of way, since from entertaining to medicine, with technology
+            EVERYTHING is possible ✨ I&apos;m obsessed with technology, maybe a
+            little too much :p
           </motion.p>
         </div>
       </AboutMe>

@@ -21,7 +21,7 @@ import { motion } from "framer-motion";
 function Contact() {
   const Map = useMemo(() =>
     dynamic(() => import("../../components/Map"), { ssr: false })
-  , []);
+  );
 
   const sendEmail = (e) => {
     emailjs
@@ -59,9 +59,9 @@ function Contact() {
             <Row>
               <InputData
                 as={motion.div}
-                initial={{ opacity: 0, scale: 0.5 }}
-                animate={{ opacity: 1, scale: 1 }}
-                transition={{ duration: 0.5 }}
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                transition={{ duration: 1 }}
               >
                 <Input
                   type="text"
@@ -73,9 +73,9 @@ function Contact() {
               </InputData>
               <InputData
                 as={motion.div}
-                initial={{ opacity: 0, scale: 0.5 }}
-                animate={{ opacity: 1, scale: 1 }}
-                transition={{ duration: 0.7, delay: 0.3 }}
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                transition={{ duration: 1, delay: 0.2 }}
               >
                 <Input
                   type="email"
@@ -89,9 +89,9 @@ function Contact() {
             <Column>
               <InputData
                 as={motion.div}
-                initial={{ opacity: 0, scale: 0.5 }}
-                animate={{ opacity: 1, scale: 1 }}
-                transition={{ duration: 0.7, delay: 0.4 }}
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                transition={{ duration: 1, delay: 0.3 }}
                 name="subject"
                 className="full-fill"
               >
@@ -100,9 +100,9 @@ function Contact() {
               </InputData>
               <InputData
                 as={motion.div}
-                initial={{ opacity: 0, scale: 0.5 }}
-                animate={{ opacity: 1, scale: 1 }}
-                transition={{ duration: 0.7, delay: 0.5 }}
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                transition={{ duration: 1, delay: 0.4 }}
                 className="full-fill"
               >
                 <TextArea

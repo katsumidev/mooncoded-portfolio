@@ -1,10 +1,11 @@
-import React, { useContext } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import { TileLayer, Marker, Popup } from "react-leaflet";
 import L from "leaflet";
 import { Container, Map, ContactInfo } from "./styles";
 import "leaflet/dist/leaflet.css";
 import { AiFillPhone, MdEmail } from "../../styles/Icons";
 import { ThemeContext } from "styled-components";
+import { motion } from "framer-motion";
 
 function MapComp() {
   const { title } = useContext(ThemeContext);
@@ -17,7 +18,12 @@ function MapComp() {
   });
 
   return (
-    <Container>
+    <Container
+      as={motion.div}
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      transition={{ duration: 1, delay: 0.7 }}
+    >
       {title === "light-theme" ? (
         <Map center={[-19.740235, -47.894058]} zoom={15} zoomControl={false}>
           <ContactInfo>
