@@ -5,6 +5,7 @@ subtitle: "Lorem ipsum dolor sit amet, consectetur adipisicing elit."
 image: "https://www.denofgeek.com/wp-content/uploads/2020/05/she-ra-entrapta-netflix.png"
 description: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Lorem ipsum dolor sit amet, consectetur adipisicing elit."
 date: "October 6, 2021"
+readTime: "9"
 ---
 
 This a test of all markdown possibilities:

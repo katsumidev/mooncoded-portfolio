@@ -1,10 +1,11 @@
 ---
-title: "This is a experiment"
+title: "This is a experiments"
 tags: "tech, entrapta, backend"
 subtitle: "Lorem ipsum dolor sit amet, consectetur adipisicing elit."
 image: "https://cinemaplanet.pt/wp-content/uploads/2020/06/entrapta.jpg"
 description: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Lorem ipsum dolor sit amet, consectetur adipisicing elit."
 date: "October 26, 2021"
+readTime: "5"
 ---
 
 This a test of all markdown possibilities:

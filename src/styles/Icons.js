@@ -7,6 +7,7 @@ export {
   BsEye,
   BsChat,
   BsLinkedin,
+  BsBook,
 } from "react-icons/bs";
 export { GiStripedSun, GiMoon } from "react-icons/gi";
 export { MdEmail } from "react-icons/md";
