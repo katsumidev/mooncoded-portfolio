@@ -36,6 +36,7 @@ export default class MyDocument extends Document {
             href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;500;600;700&display=swap"
             rel="stylesheet"
           ></link>
+          <meta name="google-site-verification" content="irKl6t8UwBedlCZJMmJqn1I-zplPtyIUsFqavOSRweQ" />
           <link rel="shortcut icon" href="static/favicon.ico" />
         </Head>
         <body>
