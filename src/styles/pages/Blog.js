@@ -258,7 +258,7 @@ export const PostImage = styled.img`
 
 export const MoreArticles = styled.div`
   display: flex;
-`
+`;
 
 export const CardContainer = styled.div`
   width: 90%;
