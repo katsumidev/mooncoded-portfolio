@@ -99,7 +99,7 @@ function about() {
               I'm <span>MOON</span>
             </NameTitle>
             <AboutMeTitle>
-              A <span>freelancer</span> Software Developer / UI - UX Designer.
+              A <span className="colored">freelancer</span> Software Developer / UI - UX Designer.
             </AboutMeTitle>
             <AboutMeParagraph>
               I am a Full-Stack developer and UI/UX Designer passionate about
@@ -134,7 +134,7 @@ function about() {
               My <span>SERVICES</span>
             </NameTitle>
             <AboutMeTitle>
-              Empowering Success through Efficient Collaboration: Leveraging the
+              Empowering <span className="colored">Success</span> through Efficient Collaboration: Leveraging the
               Right Tools and Structured Processes
             </AboutMeTitle>
           </TitleContainer>
@@ -143,9 +143,9 @@ function about() {
             noteworthy projects, leveraging my knowledge and skills to drive
             their success. My diverse background has equipped me to tackle
             complex challenges across different industries, adapting to the
-            specific needs of each client. If you're looking for a dedicated
-            professional committed to delivering exceptional results, I'm here
-            to help. Get in touch to discuss how I can contribute to the success
+            specific needs of each client. If you're looking for a <span className="colored">dedicated
+            professional</span> committed to delivering exceptional results, I'm here
+            to help. <span className="colored">Get in touch</span> to discuss how I can contribute to the success
             of your next project.
           </ServicesParagraph>
           <ExperienceContainer>

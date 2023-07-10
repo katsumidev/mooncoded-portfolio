@@ -9,6 +9,20 @@ export const Container = styled.div`
   height: 100%;
   margin: 120px auto;
   gap: 50px;
+
+  .colored {
+    background: linear-gradient(
+      to right,
+      ${(props) => props.theme.colors.primary},
+      ${(props) => props.theme.colors.secundary}
+    );
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    cursor: pointer;
+    transition: 0.3s;
+  }
 `;
 
 export const AboutMe = styled.div`
@@ -44,13 +58,38 @@ export const PictureContainer = styled.div`
   width: 600px;
   height: 600px;
   margin-bottom: 20px;
+  position: relative;
+  cursor: pointer;
+  transition: all .2s;
+
+  :hover {
+    margin-left: 10px;
+    margin-bottom: 10px;
+
+    ::before {
+      left: -25px;
+      top: 25px;
+    }
+  }
+
+  ::before {
+    content: '';
+    width: 100%;
+    height: 100%;
+    transition: all .2s;
+    position: absolute;
+    left: -15px;
+    top: 15px;
+    z-index: -1;
+    border: 2px solid ${props => props.theme.colors.mainText};
+  }
 `;
 
 export const FirstRow = styled.div`
   width: 77%;
   margin: 0 auto;
   height: auto;
-  padding: 100px 0;
+  padding: 50px 0;
   display: flex;
   flex-direction: row;
   justify-content: center;
