@@ -16,6 +16,7 @@ import {
 import { Fade, Flip, Zoom } from "react-reveal";
 import { BsEye, BsChat } from "../../styles/Icons";
 import { useRouter } from "next/router";
+import Head from "next/head";
 
 function Hero() {
   const router = useRouter();
@@ -23,6 +24,9 @@ function Hero() {
   return (
     <Container>
       <Background image={background} />
+      <Head>
+        <title>Moon Coded — Freelancer UI/UX Designer</title>
+      </Head>
       <Wrapper>
         <Main>
           <Fade top>
@@ -35,16 +39,16 @@ function Hero() {
           </Fade>
           <Fade top delay={100}>
             <SubTitle>
-              <Letter>C</Letter>
-              <Letter>O</Letter>
-              <Letter>D</Letter>
-              <Letter className="stretch">E</Letter>
-              <Letter className="stretch">D</Letter>
+              <Letter className="coded">C</Letter>
+              <Letter className="coded">O</Letter>
+              <Letter className="coded">D</Letter>
+              <Letter className="stretch coded">E</Letter>
+              <Letter className="stretch coded">D</Letter>
             </SubTitle>
           </Fade>
           <Flip top delay={600}>
             <About>
-              Front-end web <span>developer</span>, UI/UX Designer & artist ✍️
+              Front-end web <span>developer</span> and UI/UX Designer
             </About>
           </Flip>
         </Main>
@@ -56,7 +60,7 @@ function Hero() {
           </Fade>
           <Fade right delay={800}>
             <ContactButton onClick={() => router.push("/contact")}>
-              <BsChat /> talk with me
+              <BsChat /> My Work
             </ContactButton>
           </Fade>
         </HeroFooter>

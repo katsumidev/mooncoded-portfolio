@@ -7,7 +7,7 @@ export const Container = styled.div`
   align-items: center;
   width: 90vw;
   height: 100%;
-  margin: 80px auto;
+  margin: 120px auto;
   gap: 50px;
 `;
 
@@ -20,32 +20,9 @@ export const AboutMe = styled.div`
   text-align: center;
   gap: 30px;
 
-  span {
-    background: linear-gradient(
-      to right,
-      ${(props) => props.theme.colors.primary},
-      ${(props) => props.theme.colors.secundary}
-    );
-    background-clip: text;
-    -webkit-text-fill-color: transparent;
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    cursor: pointer;
-    transition: 0.3s;
-  }
-
   h1 {
     font-size: 1.5rem;
     margin-bottom: 20px;
-  }
-
-  p {
-    max-width: 500px;
-    text-align: center;
-
-    span {
-      color: ${(props) => props.theme.colors.primary};
-    }
   }
 `;
 
@@ -58,4 +35,196 @@ export const Skills = styled.div`
   @media (max-width: 500px) {
     justify-content: center;
   }
-`
+`;
+
+export const PictureContainer = styled.div`
+  background-image: url(${(props) => props.src});
+  background-size: cover;
+  background-position: center;
+  width: 600px;
+  height: 600px;
+  margin-bottom: 20px;
+`;
+
+export const FirstRow = styled.div`
+  width: 77%;
+  margin: 0 auto;
+  height: auto;
+  padding: 100px 0;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  gap: 50px;
+  max-width: 1950px;
+`;
+
+export const SecundaryRow = styled.div``;
+
+export const SecundaryColumn = styled.div`
+  width: 77%;
+  margin: 0 auto;
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  max-width: 1950px;
+`;
+
+export const TitleContainer = styled.div`
+  text-align: left;
+  width: 70%;
+`;
+
+export const ServicesParagraph = styled.div`
+  text-align: left;
+  width: 70%;
+  max-width: 700px;
+  margin-top: 50px;
+  color: ${(props) => props.theme.colors.secundaryText};
+`;
+
+export const AboutMeTitle = styled.div`
+  font-size: 1.7rem;
+  font-weight: 900;
+`;
+
+export const TechsContainer = styled.ul`
+  display: grid;
+  grid-template-columns: repeat(2, minmax(140px, 200px));
+  gap: 10px 10px;
+  padding: 0px;
+  margin: 20px 0px 0px;
+  overflow: hidden;
+  list-style: none;
+`;
+
+export const TechP = styled.li`
+  display: flex;
+  align-items: center;
+  gap: 10px;
+
+  svg {
+    color: ${(props) => props.theme.colors.primary};
+  }
+`;
+
+export const AboutMeParagraph = styled.div`
+  font-size: 1.1rem;
+  margin-top: 50px;
+  color: ${(props) => props.theme.colors.secundaryText};
+  width: 90%;
+`;
+
+export const NameTitle = styled.div`
+  font-size: 6rem;
+  font-weight: 900;
+  font-family: Arial, Helvetica, sans-serif;
+
+  span {
+    -webkit-text-fill-color: transparent;
+    -webkit-text-stroke: 3px ${(props) => props.theme.colors.mainText};
+  }
+`;
+
+export const FirstColumn = styled.div`
+  display: flex;
+  flex-direction: column;
+  max-width: 50%;
+  text-align: left;
+`;
+
+export const ResumeTitle = styled.div`
+  display: flex;
+  align-items: center;
+  gap: 10px;
+
+  h4 {
+    font-size: 1.5rem;
+  }
+
+  svg {
+    color: ${(props) => props.theme.colors.primary};
+  }
+`;
+
+export const CVContainer = styled.div`
+  display: flex;
+  flex-direction: column;
+  margin-top: 25px;
+
+  p {
+    color: ${(props) => props.theme.colors.secundaryText};
+  }
+`;
+
+export const ExperienceContainer = styled.div`
+  margin-top: 50px;
+  display: flex;
+  align-items: center;
+  gap: 15px;
+
+  .line {
+    width: 100px;
+    height: 2px;
+    background-color: ${(props) => props.theme.colors.mainText};
+  }
+
+  span {
+  }
+`;
+
+export const CVButton = styled.button`
+  width: 100%;
+  max-width: 450px;
+  align-self: flex-start;
+  position: relative;
+  padding: 20px 15px;
+  border: 2px solid;
+  margin-top: 15px;
+  border-image: linear-gradient(
+      45deg,
+      ${(props) => props.theme.colors.primary},
+      ${(props) => props.theme.colors.secundary}
+    )
+    1;
+  background-color: transparent;
+  display: inline-block;
+  cursor: pointer;
+  font-weight: 500;
+  color: ${(props) => props.theme.colors.primary};
+  transition: all 0.2s ease;
+  gap: 5px;
+
+  :after {
+    position: absolute;
+    content: "";
+    width: 100%;
+    height: 0;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    background: linear-gradient(
+      45deg,
+      ${(props) => props.theme.colors.primary},
+      ${(props) => props.theme.colors.secundary}
+    );
+    transition: all 0.3s ease;
+  }
+
+  span {
+    font-size: 1.2rem;
+  }
+
+  :hover {
+    span {
+      color: #fff !important;
+    }
+  }
+
+  :hover:after {
+    top: auto;
+    bottom: 0;
+    height: 100%;
+  }
+`;

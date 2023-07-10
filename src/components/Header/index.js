@@ -13,6 +13,7 @@ import {
   DesktopHeader,
   Menu,
   MobileContainer,
+  BackText
 } from "./styles";
 import {
   BsInstagram,
@@ -54,8 +55,8 @@ function Header(props) {
   return (
     <Container active={fixed}>
       <Wrapper>
-        <Title>
-          <EntraptaWrapper onClick={() => router.push("/")}>
+        <Title  onClick={() => router.push("/")}>
+          <EntraptaWrapper>
             <ContainerEye>
               <Eyes>
                 <Light />
@@ -65,6 +66,9 @@ function Header(props) {
               </Eyes>
             </ContainerEye>
           </EntraptaWrapper>
+          <BackText className="back-text">
+            Back home
+          </BackText>
         </Title>
         <DesktopHeader>
           <HeaderMenu>
@@ -72,11 +76,14 @@ function Header(props) {
               <li onClick={() => router.push("/about")}>
                 <span>01. </span> About
               </li>
-              <li onClick={() => router.push("/blog")}>
-                <span>02. </span> Blog
+              <li onClick={() => router.push("/projects")}>
+                <span>02. </span> Projects
+              </li>
+                <li onClick={() => router.push("/blog")}>
+                <span>03. </span> Blog
               </li>
               <li onClick={() => router.push("/contact")}>
-                <span>03. </span> Contact
+                <span>04. </span> Contact
               </li>
             </ul>
             <ThemeSwitcher onClick={props.toggleTheme} checked={title} />
@@ -112,6 +119,11 @@ function Header(props) {
             <MobileHeader key={Math.random()}>
               <ul>
                 <Fade left>
+                  <li onClick={() => router.push("/about") | setOpen(!open)}>
+                    <span>01. </span> About
+                  </li>
+                </Fade>
+                <Fade left delay={50}>
                   <li onClick={() => router.push("/about") | setOpen(!open)}>
                     <span>01. </span> About
                   </li>

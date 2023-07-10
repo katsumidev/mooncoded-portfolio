@@ -7,9 +7,9 @@ export default {
     tertiary: "#202030",
     background: "radial-gradient(circle, rgba(16,16,26,1) 0%, rgba(32,32,48,1) 50%, rgba(16,16,26,1) 100%); ",
     secundaryBackground: "#2d2d40",
-    mainText: "#FFFFFF",
+    mainText: "#F3F2F4",
     transparentMainText: "rgba(255, 255, 255, 0.8)",
-    secundaryText: "#707C80",
+    secundaryText: "#d4d0db",
     reverseColor: "#2C2C34",
     codeBlock: "#282A36",
 

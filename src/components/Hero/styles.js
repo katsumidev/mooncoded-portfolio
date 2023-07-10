@@ -72,6 +72,10 @@ export const SubTitle = styled.div`
     }
   }
 
+  .coded {
+    font-size: 9rem;
+  }
+
   :hover {
     .stretch {
       transform: scale(1, 1);
@@ -83,7 +87,7 @@ export const SubTitle = styled.div`
 `;
 
 export const Letter = styled.h1`
-  font-size: 6.5rem;
+  font-size: 8.5rem;
 
   @media (max-width: 500px) {
     font-size: 4.5rem;
@@ -116,7 +120,7 @@ export const Main = styled.div`
 `;
 
 export const About = styled.h3`
-  font-size: 1.2rem;
+  font-size: 2.2rem;
   font-family: "Quicksand", sans-serif;
   color: ${(props) => props.theme.colors.mainText};
   text-align: center;
@@ -143,7 +147,7 @@ export const ViewButton = styled.div`
   position: absolute;
   bottom: -100px;
   left: 0;
-  font-size: 1.2rem;
+  font-size: 1.5rem;
   font-family: "Quicksand", sans-serif;
   color: ${(props) => props.theme.colors.mainText};
   cursor: pointer;
@@ -189,7 +193,7 @@ export const ContactButton = styled.div`
   position: absolute;
   bottom: -100px;
   right: 0;
-  font-size: 1.2rem;
+  font-size: 1.5rem;
   font-family: "Quicksand", sans-serif;
   color: ${(props) => props.theme.colors.mainText};
   cursor: pointer;

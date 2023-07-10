@@ -58,7 +58,7 @@ export const Title = styled.div`
 `;
 
 export const Letter = styled.h1`
-  font-size: 5.5rem;
+  font-size: 7.5rem;
   text-transform: uppercase;
   opacity: ${(props) => (props.theme.title === "light-theme" ? "0.2" : "0.1")};
 

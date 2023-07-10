@@ -15,7 +15,7 @@ export default function Blog({ posts }) {
   return (
     <Container>
       <Head>
-        <title>Moon Coded - Blog</title>
+        <title>Moon Coded — Blog</title>
       </Head>
       <PageTitle title="blog" stretchedLetter="b" overlayTitle="tutorials | documentation | life" />
       <MainWrapper>

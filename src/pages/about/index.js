@@ -2,8 +2,32 @@ import Head from "next/head";
 import React from "react";
 import PageTitle from "../../components/PageTitle";
 import SkillCard from "../../components/SkillCard";
-import { Container, AboutMe, Skills } from "../../styles/pages/About";
+import {
+  Container,
+  AboutMe,
+  Skills,
+  FirstRow,
+  PictureContainer,
+  AboutMeTitle,
+  AboutMeParagraph,
+  FirstColumn,
+  ResumeTitle,
+  CVButton,
+  NameTitle,
+  ExperienceContainer,
+  CVContainer,
+  SecundaryRow,
+  SecundaryColumn,
+  TitleContainer,
+  ServicesParagraph,
+  TechsContainer,
+  TechP
+} from "../../styles/pages/About";
 import { motion } from "framer-motion";
+import {IoLogoJavascript, IoLogoReact, IoLogoPython, IoLogoFigma, } from "react-icons/io"
+import {FaReact, FaFigma, FaNodeJs} from "react-icons/fa"
+import { BsFileText, BsFillFileTextFill } from "react-icons/bs";
+import {SiTypescript} from "react-icons/si"
 
 function about() {
   const data = {
@@ -59,7 +83,7 @@ function about() {
   return (
     <Container>
       <Head>
-        <title>Moon Coded - About Me</title>
+        <title>Moon Coded — About Me</title>
       </Head>
       <PageTitle
         title="about"
@@ -67,59 +91,94 @@ function about() {
         overlayTitle="techs | experiences | skills"
       />
       <AboutMe>
-        <div>
-          <motion.h1
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ duration: 0.8 }}
-          >
-            👋 Hi! I&apos;m <span>Moon</span>, a software developer
-          </motion.h1>
-          <motion.p
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ duration: 0.8 }}
-          >
-            I&apos;ve benn studying software development since 2018, I&apos;m
-            passionate about solving problems and facing challenges, that&apos;s
-            why I love technology and software development since I was a child,
-            I always trying to work and study the most diverse types of
-            technology that I can.
-          </motion.p>
-          <motion.p
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ duration: 0.8, delay: 0.2 }}
-          >
-            I&apos;m a quick learner, it doesn&apos;t matter if I dont know... i
-            can learn. I am currently focused on <span>web development</span>{" "}
-            using technologies such as:
-          </motion.p>
-        </div>
-        <Skills
-          as={motion.div}
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ duration: 0.8, delay: 0.3 }}
-        >
-          <SkillCard data={data.cardOne} />
-          <SkillCard data={data.cardTwo} />
-          <SkillCard data={data.cardThree} />
-        </Skills>
-        <div>
-          <motion.p
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ duration: 0.8, delay: 0.4 }}
-          >
-            I LOVE to create new and different things from scratch, that&apos;s
-            why I&apos;ve chosen the development career, tech makes possible to
-            create an infinitude of things, things that help society in every
-            kind of way, since from entertaining to medicine, with technology
-            EVERYTHING is possible ✨ I&apos;m obsessed with technology, maybe a
-            little too much :p
-          </motion.p>
-        </div>
+        <FirstRow>
+          <PictureContainer src="/static/assets/pfp.jpg" />
+          <FirstColumn>
+            <AboutMeTitle>Hello 👋</AboutMeTitle>
+            <NameTitle>
+              I'm <span>MOON</span>
+            </NameTitle>
+            <AboutMeTitle>
+              A <span>freelancer</span> Software Developer / UI - UX Designer.
+            </AboutMeTitle>
+            <AboutMeParagraph>
+              I am a Full-Stack developer and UI/UX Designer passionate about
+              bringing digital products to life. My goal is to transform
+              innovative ideas into functional and engaging experiences. I focus
+              particularly on developing dynamic and responsive interfaces, as
+              well as creating performant and SEO-optimized websites to ensure
+              my clients' projects stand out online. By combining my expertise
+              in front-end and back-end development, I can ensure that the
+              digital products I create not only have a stunning appearance but
+              are also efficient and user-friendly.
+            </AboutMeParagraph>
+            {/* <ResumeTitle>
+              <BsFileText size={30} />
+              <h4>Past Experience</h4>
+            </ResumeTitle> */}
+            <ExperienceContainer>
+              <div className="line"></div>
+              <span>Past Experiences</span>
+            </ExperienceContainer>
+            <CVContainer>
+              <p>Want to know more about my education and experience.</p>
+              <CVButton>
+                <span>Download CV</span>
+              </CVButton>
+            </CVContainer>
+          </FirstColumn>
+        </FirstRow>
+        <SecundaryColumn>
+          <TitleContainer>
+            <NameTitle>
+              My <span>SERVICES</span>
+            </NameTitle>
+            <AboutMeTitle>
+              Empowering Success through Efficient Collaboration: Leveraging the
+              Right Tools and Structured Processes
+            </AboutMeTitle>
+          </TitleContainer>
+          <ServicesParagraph>
+            As a freelancer, I have been able to make valuable contributions to
+            noteworthy projects, leveraging my knowledge and skills to drive
+            their success. My diverse background has equipped me to tackle
+            complex challenges across different industries, adapting to the
+            specific needs of each client. If you're looking for a dedicated
+            professional committed to delivering exceptional results, I'm here
+            to help. Get in touch to discuss how I can contribute to the success
+            of your next project.
+          </ServicesParagraph>
+          <ExperienceContainer>
+              <div className="line"></div>
+              <span>My Skills</span>
+            </ExperienceContainer>
+          <TechsContainer>
+            <TechP>
+              <IoLogoJavascript />
+              <span>Javascript ES6+</span>
+            </TechP>
+            <TechP>
+              <FaReact />
+              <span>React.Js</span>
+            </TechP>
+            <TechP>
+              <FaFigma />
+              <span>Figma</span>
+            </TechP>
+            <TechP>
+              <IoLogoPython />
+              <span>Python</span>
+            </TechP>
+            <TechP>
+              <SiTypescript />
+              <span>Typscript</span>
+            </TechP>
+            <TechP>
+              <FaNodeJs />
+              <span>Node.Js</span>
+            </TechP>
+          </TechsContainer>
+        </SecundaryColumn>
       </AboutMe>
     </Container>
   );

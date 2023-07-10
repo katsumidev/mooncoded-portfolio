@@ -1,4 +1,3 @@
-import { style } from "canvas-sketch-util/color";
 import styled from "styled-components";
 
 export const Container = styled.div`
@@ -12,7 +11,7 @@ export const Container = styled.div`
   transition: 0.2s;
   z-index: 999;
   color: ${(props) => props.theme.colors.mainText};
-  height: ${(props) => (props.active ? "50px" : "60px")};
+  height: ${(props) => (props.active ? "60px" : "100px")};
   width: 100vw;
   background-color: ${(props) =>
     props.active ? props.theme.colors.tertiary : "transparent"};
@@ -23,6 +22,7 @@ export const Container = styled.div`
     cursor: pointer;
   }
 `;
+
 
 export const Wrapper = styled.div`
   display: flex;
@@ -37,6 +37,14 @@ export const Title = styled.div`
   align-items: center;
   justify-content: center;
   gap: 5px;
+  cursor: pointer;
+
+  :hover {
+    .back-text {
+      opacity: 1;
+      transform: translateX(0px);
+    }
+  }
 `;
 
 export const HeaderMenu = styled.div`
@@ -51,7 +59,7 @@ export const HeaderMenu = styled.div`
     display: flex;
     flex-direction: row;
     font-weight: 500;
-    font-size: 13px;
+    font-size: 16px;
     gap: 20px;
     align-items: center;
 
@@ -288,3 +296,10 @@ export const Menu = styled.div`
     display: flex;
   }
 `;
+
+export const BackText = styled.div`
+  font-weight: 900;
+  opacity: 0;
+  transform: translateX(20px);
+  transition: all 0.4s;
+`
