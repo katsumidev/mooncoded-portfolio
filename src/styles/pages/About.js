@@ -145,7 +145,9 @@ export const ServicesParagraph = styled.div`
   width: 70%;
   max-width: 700px;
   margin-top: 50px;
-  color: ${(props) => props.theme.colors.secundaryText};
+  color: ${(props) => props.theme.colors.mainText};
+  font-weight: 500;
+  font-size: 1.1rem;
 
   @media (max-width: 1100px) {
     width: 90%;
@@ -186,7 +188,8 @@ export const TechP = styled.li`
 export const AboutMeParagraph = styled.div`
   font-size: 1.1rem;
   margin-top: 50px;
-  color: ${(props) => props.theme.colors.secundaryText};
+  color: ${(props) => props.theme.colors.mainText};
+  font-weight: 500;
   width: 90%;
 `;
 
@@ -238,7 +241,9 @@ export const CVContainer = styled.div`
   margin-top: 25px;
 
   p {
-    color: ${(props) => props.theme.colors.secundaryText};
+    color: ${(props) => props.theme.colors.mainText};
+    font-size: 1.1rem;
+    font-weight: 500;
   }
 `;
 
