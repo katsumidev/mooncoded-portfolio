@@ -220,7 +220,7 @@ export const StacksRow = styled.div`
   }
 `;
 
-export const Projects = styled.div`
+export const ProjectsMain = styled.div`
   display: flex;
   flex-direction: row;
   width: 100%;

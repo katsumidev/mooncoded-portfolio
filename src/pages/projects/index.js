@@ -6,12 +6,12 @@ import {
   Thumbnail,
   DateContainer,
   ThumbnailWrapper,
-  Projects
+  ProjectsMain
 } from "../../styles/pages/Projects";
 import PageTitle from "../../components/PageTitle";
 import { useRouter } from "next/router";
 
-function projects() {
+function Projects() {
   const router = useRouter();
 
   return (
@@ -22,7 +22,7 @@ function projects() {
         overlayTitle="Contributions | Freelances"
       />
 
-      <Projects>
+      <ProjectsMain>
         <ProjectWrapper onClick={() => window.open("https://dribbble.com/shots/22022766-Marketplace", "_blank")}>
           <ThumbnailWrapper>
             <AppDetails>
@@ -114,9 +114,9 @@ function projects() {
         </ProjectWrapper>
 
         
-      </Projects>
+      </ProjectsMain>
     </Container>
   );
 }
 
-export default projects;
+export default Projects;

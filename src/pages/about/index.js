@@ -30,7 +30,7 @@ import { BsFileText, BsFillFileTextFill } from "react-icons/bs";
 import {SiTypescript} from "react-icons/si"
 import { useRouter } from "next/router";
 
-function about() {
+function About() {
   const router = useRouter()
 
   const data = {
@@ -187,4 +187,4 @@ function about() {
   );
 }
 
-export default about;
+export default About;
