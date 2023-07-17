@@ -6,7 +6,8 @@ export const Container = styled.div`
   flex-direction: row;
   justify-content: center;
   width: 100vw;
-  margin: 60px auto;
+  padding: 130px 0;
+  margin: 0 auto;
   gap: 20px;
 
   color: ${(props) => props.theme.colors.mainText};
@@ -273,6 +274,7 @@ export const CardContainer = styled.div`
   gap: 5px;
   border: 1px solid ${(props) => props.theme.colors.secundaryText};
   cursor: pointer;
+  
 
   sub {
     color: ${(props) => props.theme.colors.secundaryText};
@@ -286,3 +288,4 @@ export const ImageComp = styled.img`
   border-radius: 4px;
   width: 95%;
 `;
+

@@ -48,80 +48,75 @@ function Contact() {
       <Head>
         <title>Moon Coded - Contact Me</title>
       </Head>
-      <LeftContainer>
-        <Main>
-          <PageTitle
-            title="contact"
-            stretchedLetter="n"
-            overlayTitle="freelance | questions | prices"
-          />
-          <Form onSubmit={sendEmail}>
-            <Row>
-              <InputData
-                as={motion.div}
-                initial={{ opacity: 0 }}
-                animate={{ opacity: 1 }}
-                transition={{ duration: 1 }}
-              >
-                <Input
-                  type="text"
-                  name="username"
-                  placeholder="Your name"
-                  required
-                ></Input>
-                <div className="underline"></div>
-              </InputData>
-              <InputData
-                as={motion.div}
-                initial={{ opacity: 0 }}
-                animate={{ opacity: 1 }}
-                transition={{ duration: 1, delay: 0.2 }}
-              >
-                <Input
-                  type="email"
-                  name="email"
-                  placeholder="Email"
-                  required
-                ></Input>
-                <div className="underline"></div>
-              </InputData>
-            </Row>
-            <Column>
-              <InputData
-                as={motion.div}
-                initial={{ opacity: 0 }}
-                animate={{ opacity: 1 }}
-                transition={{ duration: 1, delay: 0.3 }}
-                name="subject"
-                className="full-fill"
-              >
-                <Input type="text" placeholder="Subject" required></Input>
-                <div className="underline"></div>
-              </InputData>
-              <InputData
-                as={motion.div}
-                initial={{ opacity: 0 }}
-                animate={{ opacity: 1 }}
-                transition={{ duration: 1, delay: 0.4 }}
-                className="full-fill"
-              >
-                <TextArea
-                  name="message"
-                  placeholder="Message"
-                  required
-                ></TextArea>
-                <div className="underline"></div>
-              </InputData>
-              <SubmitButton type="submit">
-                <span>Submit</span>
-              </SubmitButton>
-            </Column>
-          </Form>
-        </Main>
-      </LeftContainer>
-      <RightContainer>
-        <Map />
-      </RightContainer>
+      <Main>
+        <PageTitle
+          title="contact"
+          stretchedLetter="n"
+          overlayTitle="freelance | questions | prices"
+        />
+        <Form onSubmit={sendEmail}>
+          <Row>
+            <InputData
+              as={motion.div}
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ duration: 1 }}
+            >
+              <Input
+                type="text"
+                name="username"
+                placeholder="Your name"
+                required
+              ></Input>
+              <div className="underline"></div>
+            </InputData>
+            <InputData
+              as={motion.div}
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ duration: 1, delay: 0.2 }}
+            >
+              <Input
+                type="email"
+                name="email"
+                placeholder="Email"
+                required
+              ></Input>
+              <div className="underline"></div>
+            </InputData>
+          </Row>
+          <Column>
+            <InputData
+              as={motion.div}
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ duration: 1, delay: 0.3 }}
+              name="subject"
+              className="full-fill"
+            >
+              <Input type="text" placeholder="Subject" required></Input>
+              <div className="underline"></div>
+            </InputData>
+            <InputData
+              as={motion.div}
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ duration: 1, delay: 0.4 }}
+              className="full-fill"
+            >
+              <TextArea
+                name="message"
+                placeholder="Message"
+                required
+              ></TextArea>
+              <div className="underline"></div>
+            </InputData>
+            <SubmitButton type="submit">
+              <span>Submit</span>
+            </SubmitButton>
+          </Column>
+        </Form>
+      </Main>
     </Container>
   );
 }

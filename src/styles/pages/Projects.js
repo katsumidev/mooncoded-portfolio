@@ -1,7 +1,8 @@
 import styled from "styled-components";
 
 export const Container = styled.div`
-  margin: 120px auto;
+  padding: 130px 0;
+  margin: 0 auto;
   width: 90%;
   display: flex;
   flex-direction: column;
@@ -47,205 +48,113 @@ export const Container = styled.div`
   }
 `;
 
-export const MobileApp = styled.div`
-  width: 80%;
-  min-height: 450px;
+export const DateContainer = styled.div`
   display: flex;
-  border-radius: 20px;
-  flex-direction: row;
-  justify-content: center;
   align-items: center;
-  padding: 26px;
-  background-color: transparent;
-  border: 2px solid ${(props) => props.theme.colors.mainText};
-  position: relative;
-  -webkit-clip-path: inset(-100vw 0 0 -100vw);
-  clip-path: inset(-100vw 0 0 -100vw);
-  margin-bottom: 70px;
+  gap: 15px;
 
-  .main-wrapper {
-    display: flex;
-    justify-content: center;
-    align-items: center;
+  .line {
+    width: 30px;
+    height: 2px;
+    background-color: ${(props) => props.theme.colors.mainText};
   }
 
-  .right-side {
-    position: relative;
-    width: 100%;
-    padding-left: 12px;
-    padding-right: 12px;
-    flex: 0 0 50%;
-    max-width: 50%;
-    margin-right: ${(props) => (props.left ? "100px" : "0px")};
-  }
-
-  .img-right {
-    margin-left: 10rem;
-  }
-
-  .img-left {
-    margin-left: -10rem;
-  }
-
-  .phone-holder {
-    position: absolute;
-    width: 130%;
-    max-width: 130%;
-    top: -12rem;
-  }
-
-  @media only screen and (max-width: 768px) {
-    .phone-holder {
-      display: none;
-    }
-  }
-
-  @media only screen and (min-width: 769px) and (max-width: 1023px) {
-    .phone-holder {
-      display: none;
-    }
-  }
-
-  @media (max-width: 900px) {
-    flex-direction: column;
-    width: 90%;
-
-    .main-wrapper {
-      flex-direction: column;
-    }
-
-    .right-side {
-      max-width: 100%;
-      margin-right: 0px;
-      margin-bottom: 20px;
-    }
-
-    .phone-holder {
-      position: relative;
-      width: 100%;
-      max-width: 100%;
-      top: 0px;
-      margin-top: 50px;
-
-      img {
-        position: relative;
-        width: 100%;
-      }
-    }
+  span {
   }
 `;
 
-export const ProductRow = styled.div`
-  width: 80%;
-  min-height: 450px;
-  display: flex;
-  border-radius: 20px;
-  flex-direction: row;
-  justify-content: center;
-  align-items: center;
-  padding: 26px;
-  background-color: transparent;
-  border: 2px solid ${(props) => props.theme.colors.mainText};
-  position: relative;
-  -webkit-clip-path: inset(-100vw 0 0 -100vw);
-  clip-path: inset(-100vw 0 0 -100vw);
-  margin-bottom: 70px;
-
-  .main-wrapper {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
-
-  .right-side {
-    position: relative;
-    width: 100%;
-    padding-left: 12px;
-    padding-right: 12px;
-    flex: 0 0 50%;
-    max-width: 50%;
-    margin-right: ${(props) => (props.left ? "100px" : "0px")};
-  }
-
-  .phone-holder {
-    position: absolute;
-    width: 200%;
-    max-width: 200%;
-    top: -10rem;
-  }
-
-  .laptop {
-    transition: all 0.2s;
-    width: 100%;
-    max-width: 100%;
-    transform: rotate(-2deg);
-    cursor: pointer;
-
-    :hover {
-      transform: scale(1.07);
-    }
-  }
-
-  @media only screen and (max-width: 768px) {
-    .phone-holder {
-      display: none;
-    }
-  }
-
-  @media only screen and (min-width: 769px) and (max-width: 1023px) {
-    .phone-holder {
-      display: none;
-    }
-  }
-
-  @media (max-width: 900px) {
-    flex-direction: column;
-    width: 90%;
-
-    .main-wrapper {
-      flex-direction: column;
-    }
-
-    .right-side {
-      max-width: 100%;
-      margin-right: 0px;
-      margin-bottom: 20px;
-    }
-
-    .phone-holder {
-      position: relative;
-      width: 100%;
-      max-width: 100%;
-      top: 0px;
-      margin-top: 50px;
-
-      img {
-        position: relative;
-        width: 100%;
-      }
-    }
-  }
-`;
-
-export const Phone = styled.img`
-  transition: all 0.2s;
+export const ThumbnailWrapper = styled.div`
   width: 100%;
-  max-width: 100%;
-  cursor: pointer;
+  position: relative;
+  height: 100%;
+  overflow: hidden;
 
   :hover {
-    transform: scale(1.07);
+    .thumb {
+      transform: scale(1.1);
+    }
+  }
+`;
+
+export const ProjectWrapper = styled.div`
+  width: 100%;
+  max-width: 400px;
+  cursor: pointer;
+  position: relative;
+  height: 500px;
+
+  @media (max-width: 600px) {
+    max-width: 90%;
+  } 
+
+  :hover {
+
+    ::before {
+      left: -25px;
+      top: 25px;
+    }
+  }
+
+  ::before {
+    content: '';
+    width: 100%;
+    height: 100%;
+    transition: all .2s;
+    position: absolute;
+    left: -15px;
+    top: 15px;
+    z-index: -1;
+    border: 2px solid ${props => props.theme.colors.mainText};
+  }
+`;
+
+export const Thumbnail = styled.div`
+  width: 100%;
+  height: 100%;
+  width: 100%;
+  background-image: url(${(props) => props.src});
+  background-position: 10%;
+  background-size: cover;
+  transition: all 0.2s;
+
+  ::before {
+    content: "";
+    width: 100%;
+    height: 100%;
+    transition: all 0.2s;
+    position: absolute;
+    left: -15px;
+    top: 15px;
+    z-index: -1;
+    border: 2px solid ${(props) => props.theme.colors.mainText};
   }
 `;
 
 export const AppDetails = styled.div`
   display: flex;
   flex-direction: column;
-  color: ${(props) => props.theme.colors.mainText};
-  gap: 20px;
-
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  z-index: 2;
+  padding: 30px;
+  position: absolute;
+  height: 100%;
   width: 100%;
   min-width: 70%;
+  top: 0;
+  left: 0;
+  opacity: 0;
+  transition: all 0.2s;
+
+  :hover {
+    opacity: 1;
+  }
+
+  backdrop-filter: blur(5px) saturate(180%);
+  -webkit-backdrop-filter: blur(5px) saturate(180%);
+  background-color: rgba(0, 0, 0, 0.8);
 
   .app-title {
     display: flex;
@@ -255,12 +164,20 @@ export const AppDetails = styled.div`
     font-size: 1.5rem;
   }
 
+  h1 {
+    font-size: 3rem;
+    text-transform: uppercase;
+    font-weight: 900;
+    font-family: Arial, Helvetica, sans-serif;
+  }
+
   h2 {
     font-size: 1.5rem;
   }
 
   h4 {
     font-weight: 500;
+    margin-top: 20px;
   }
 
   @media (max-width: 1100px) {
@@ -303,10 +220,23 @@ export const StacksRow = styled.div`
   }
 `;
 
-export const ProjectsColumn = styled.div`
+export const Projects = styled.div`
   display: flex;
-  flex-direction: column;
-  margin-top: 60px;
+  flex-direction: row;
   width: 100%;
+  justify-content: center;
   align-items: center;
+  flex-wrap: wrap;
+  gap: 100px;
+  margin-top: 60px;
+`;
+
+export const ProjectStatus = styled.div`
+  width: 250px;
+  padding: 20px;
+  background-color: ${(props) => props.theme.colors.mainText};
+  position: absolute;
+  left: -80px;
+  bottom: 30px;
+  font-weight: 900;
 `;

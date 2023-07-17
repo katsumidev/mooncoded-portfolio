@@ -158,6 +158,18 @@ export const Lines = styled.div`
   overflow: hidden;
 `;
 
+export const Dots = styled.div`
+position: fixed;
+  width: 300vw;
+  height: 300vh;
+  left: -100%;
+  background-image: radial-gradient(${props => props.theme.colors.mainText} 3px, transparent 0);
+  background-size: 30px 30px;
+  background-position: -10px -10px;
+  opacity: 0.01;
+  transform: rotate(60deg);
+`
+
 export const CanvasContainer = styled.div`
   position: fixed;
   display: flex;
@@ -166,8 +178,8 @@ export const CanvasContainer = styled.div`
   width: 100vw;
   height: 100vh;
   visibility: visible;
-  background: transparent;
-  opacity: 0.3;
+  background-color: transparent;
+  opacity: 0.1;
   z-index: -1;
 `;
 

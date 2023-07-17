@@ -76,6 +76,12 @@ export const SubTitle = styled.div`
     font-size: 9rem;
   }
 
+  @media (max-width: 500px) {
+    .coded {
+      font-size: 5rem;
+    }
+  }
+
   :hover {
     .stretch {
       transform: scale(1, 1);
@@ -162,10 +168,12 @@ export const ViewButton = styled.div`
     margin-top: 4px;
   }
 
-  @media (max-width: 450px) {
+
+  @media (max-width: 600px) {
     bottom: 0;
     position: relative;
     width: fit-content;
+    font-size: 1rem;
   }
 
   :before {
@@ -208,10 +216,11 @@ export const ContactButton = styled.div`
     margin-top: 4px;
   }
 
-  @media (max-width: 450px) {
+  @media (max-width: 600px) {
     bottom: 0;
     position: relative;
     width: fit-content;
+    font-size: 1rem;
   }
 
   :before {
@@ -236,12 +245,13 @@ export const ContactButton = styled.div`
 `;
 
 export const HeroFooter = styled.div`
-  @media (max-width: 450px) {
+  @media (max-width: 500px) {
     display: flex;
     flex-direction: column;
     position: relative;
     justify-content: center;
     align-items: center;
     gap: 10px;
+    margin-top: 50px;
   }
 `;

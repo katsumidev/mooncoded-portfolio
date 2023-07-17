@@ -4,7 +4,7 @@ import Image from "next/image";
 export const Container = styled.div`
   display: flex;
   flex-direction: column;
-  width: 300px;
+  width: 350px;
   margin: 5px;
   cursor: pointer;
   border-radius: 5px;
@@ -18,7 +18,7 @@ export const Container = styled.div`
 export const Info = styled.div`
   display: flex;
   flex-direction: column;
-  padding: 0.6rem 0.2rem;
+  padding: 1rem;
   border-radius: 3px;
   height: auto;
 
@@ -88,10 +88,13 @@ export const ImageWrapper = styled.div`
   border-radius: 4px;
   width: 100%;
   height: 175px;
+  border-top-right-radius: 8px;
+  border-top-left-radius: 8px;
 `;
 
 export const ImageComp = styled(Image)`
-  border-radius: 4px;
+  border-top-right-radius: 8px;
+  border-top-left-radius: 8px;
 `
 
 export const Overlay = styled.div`

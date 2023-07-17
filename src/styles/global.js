@@ -10,5 +10,6 @@ export default createGlobalStyle`
     body {
         background: ${(props) => props.theme.colors.background};
         font-family:  'Quicksand', sans-serif;
+        overflow-x: hidden;
     }
 `;

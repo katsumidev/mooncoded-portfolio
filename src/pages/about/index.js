@@ -28,8 +28,11 @@ import {IoLogoJavascript, IoLogoReact, IoLogoPython, IoLogoFigma, } from "react-
 import {FaReact, FaFigma, FaNodeJs} from "react-icons/fa"
 import { BsFileText, BsFillFileTextFill } from "react-icons/bs";
 import {SiTypescript} from "react-icons/si"
+import { useRouter } from "next/router";
 
 function about() {
+  const router = useRouter()
+
   const data = {
     cardOne: {
       title: "Frameworks",
@@ -122,7 +125,7 @@ function about() {
             </ExperienceContainer>
             <CVContainer>
               <p>Want to know more about my education and experience.</p>
-              <CVButton>
+              <CVButton onClick={() => router.push("/static/files/curriculum_vitae.pdf")}>
                 <span>Download CV</span>
               </CVButton>
             </CVContainer>

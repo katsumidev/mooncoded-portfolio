@@ -2,7 +2,7 @@
 tags: "development, frontend, next.js"
 title: "Meu site em Next.js não está sendo indexado pelo Google!! Aqui está o que você pode fazer"
 subtitle: "Você hospedou seu projeto em next.js mas ele não está aparecendo nos resultados de busca do Google? aqui está o motivo a e algumas possiveis soluções:"
-image: "https://blog.codeminer42.com/wp-content/uploads/2021/02/nextjs-cover.jpg"
+image: "https://nextjs.org/static/blog/next-13-4/twitter-card.png"
 description: "Se o seu projeto em next.js não está sendo indexado pelo buscador do Google, esse artigo é pra você!"
 date: "November 1, 2022"
 readTime: "5"

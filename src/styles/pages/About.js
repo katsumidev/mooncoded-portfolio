@@ -7,8 +7,9 @@ export const Container = styled.div`
   align-items: center;
   width: 90vw;
   height: 100%;
-  margin: 120px auto;
   gap: 50px;
+  padding: 130px 0;
+  margin: 0 auto;
 
   .colored {
     background: linear-gradient(
@@ -62,6 +63,11 @@ export const PictureContainer = styled.div`
   cursor: pointer;
   transition: all .2s;
 
+  @media (max-width: 750px) {
+    width: 90%;
+    height: 400px;
+  }
+
   :hover {
     margin-left: 10px;
     margin-bottom: 10px;
@@ -95,6 +101,14 @@ export const FirstRow = styled.div`
   justify-content: center;
   gap: 50px;
   max-width: 1950px;
+
+  @media (max-width: 1100px) {
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    text-align: center;
+
+  }
 `;
 
 export const SecundaryRow = styled.div``;
@@ -108,11 +122,22 @@ export const SecundaryColumn = styled.div`
   justify-content: center;
   align-items: flex-start;
   max-width: 1950px;
+
+  @media (max-width: 1100px) {
+    text-align: center;
+    align-items: center;
+    width: 100%;
+  }
 `;
 
 export const TitleContainer = styled.div`
   text-align: left;
   width: 70%;
+  
+  @media (max-width: 1100px) {
+    text-align: center;
+    width: 100%;
+  }
 `;
 
 export const ServicesParagraph = styled.div`
@@ -121,11 +146,17 @@ export const ServicesParagraph = styled.div`
   max-width: 700px;
   margin-top: 50px;
   color: ${(props) => props.theme.colors.secundaryText};
+
+  @media (max-width: 1100px) {
+    width: 90%;
+    text-align: center;
+  }
 `;
 
 export const AboutMeTitle = styled.div`
   font-size: 1.7rem;
   font-weight: 900;
+
 `;
 
 export const TechsContainer = styled.ul`
@@ -142,6 +173,10 @@ export const TechP = styled.li`
   display: flex;
   align-items: center;
   gap: 10px;
+
+  @media (max-width: 1100px) {
+    justify-content: center;
+  }
 
   svg {
     color: ${(props) => props.theme.colors.primary};
@@ -160,6 +195,10 @@ export const NameTitle = styled.div`
   font-weight: 900;
   font-family: Arial, Helvetica, sans-serif;
 
+  @media (max-width: 750px) {
+    font-size: 4rem;
+  }
+
   span {
     -webkit-text-fill-color: transparent;
     -webkit-text-stroke: 3px ${(props) => props.theme.colors.mainText};
@@ -171,6 +210,12 @@ export const FirstColumn = styled.div`
   flex-direction: column;
   max-width: 50%;
   text-align: left;
+
+  @media (max-width: 1100px) {
+    max-width: 100%;
+    text-align: center;
+    align-items: center;
+  }
 `;
 
 export const ResumeTitle = styled.div`

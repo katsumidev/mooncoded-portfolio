@@ -59,7 +59,7 @@ function Hero() {
             </ViewButton>
           </Fade>
           <Fade right delay={800}>
-            <ContactButton onClick={() => router.push("/contact")}>
+            <ContactButton onClick={() => router.push("/projects")}>
               <BsChat /> My Work
             </ContactButton>
           </Fade>

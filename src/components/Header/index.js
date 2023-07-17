@@ -16,9 +16,8 @@ import {
   BackText
 } from "./styles";
 import {
-  BsInstagram,
   BsGithub,
-  BsTwitter,
+  BsDribbble,
   BsLinkedin,
 } from "../../styles/Icons";
 import { useRouter } from "next/router";
@@ -53,7 +52,7 @@ function Header(props) {
   }
 
   return (
-    <Container active={fixed}>
+    <Container active={fixed} open={open}>
       <Wrapper>
         <Title  onClick={() => router.push("/")}>
           <EntraptaWrapper>
@@ -102,9 +101,9 @@ function Header(props) {
                 }
                 size={17}
               />
-              <BsTwitter
+              <BsDribbble
                 onClick={() =>
-                  window.open("https://twitter.com/m00ncoded", "_blank").focus()
+                  window.open("https://dribbble.com/twilightmoonhex", "_blank").focus()
                 }
                 size={17}
               />
@@ -118,24 +117,24 @@ function Header(props) {
           {open && (
             <MobileHeader key={Math.random()}>
               <ul>
-                <Fade left>
+                <Fade top delay={100}>
                   <li onClick={() => router.push("/about") | setOpen(!open)}>
                     <span>01. </span> About
                   </li>
                 </Fade>
-                <Fade left delay={50}>
-                  <li onClick={() => router.push("/about") | setOpen(!open)}>
-                    <span>01. </span> About
+                <Fade top delay={300}>
+                  <li onClick={() => router.push("/projects") | setOpen(!open)}>
+                    <span>02. </span> Works
                   </li>
                 </Fade>
-                <Fade left delay={100}>
+                <Fade top delay={500}>
                   <li onClick={() => router.push("/blog") | setOpen(!open)}>
-                    <span>02. </span> Blog
+                    <span>03. </span> Blog
                   </li>
                 </Fade>
-                <Fade left delay={300}>
+                <Fade top delay={1000}>
                   <li onClick={() => router.push("/contact") | setOpen(!open)}>
-                    <span>03. </span> Contact
+                    <span>04. </span> Contact
                   </li>
                 </Fade>
               </ul>
@@ -160,10 +159,10 @@ function Header(props) {
                     }
                     size={17}
                   />
-                  <BsTwitter
+                  <BsDribbble
                     onClick={() =>
                       window
-                        .open("https://twitter.com/m00ncoded", "_blank")
+                        .open("https://dribbble.com/twilightmoonhex", "_blank")
                         .focus()
                     }
                     size={17}

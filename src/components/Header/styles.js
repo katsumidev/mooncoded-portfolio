@@ -1,4 +1,4 @@
-import styled from "styled-components";
+import styled, { css } from "styled-components";
 
 export const Container = styled.div`
   display: flex;
@@ -7,22 +7,45 @@ export const Container = styled.div`
   align-items: center;
   flex-direction: row;
   padding-right: 15px;
-  top: 0;
+  margin-top: 30px;
+  margin-left: auto;
+  margin-right: auto;
+  left: 0;
+  right: 0;
   transition: 0.2s;
   z-index: 999;
   color: ${(props) => props.theme.colors.mainText};
-  height: ${(props) => (props.active ? "60px" : "100px")};
-  width: 100vw;
-  background-color: ${(props) =>
-    props.active ? props.theme.colors.tertiary : "transparent"};
-  box-shadow: ${(props) =>
-    props.active ? "rgba(100, 100, 111, 0.2) 0px 7px 29px 0px" : "none"};
+  width: 90vw;
+
+  ${(props) =>
+    props.theme.title == "dark-theme"
+      ? css`
+          background: rgba(42, 43, 56, 0.5);
+          border: 0.1rem solid rgba(255, 255, 255, 0.1);
+          -webkit-backdrop-filter: blur(104px);
+          backdrop-filter: blur(104px);
+          border-radius: 8px;
+        `
+      : css`
+          background: rgba(255, 255, 255, 0.25);
+          box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+          backdrop-filter: blur(4px);
+          -webkit-backdrop-filter: blur(4px);
+          border-radius: 10px;
+          border: 1px solid rgba(255, 255, 255, 0.18);
+        `}
+
+  ${(props) =>
+    props.open &&
+    css`
+      width: 100vw;
+      margin-top: 0px;
+    `}
 
   img {
     cursor: pointer;
   }
 `;
-
 
 export const Wrapper = styled.div`
   display: flex;
@@ -68,6 +91,9 @@ export const HeaderMenu = styled.div`
       position: relative;
       transition: 0.2s;
       padding: 6px;
+      display: flex;
+      flex-direction: row;
+      align-items: center;
 
       span {
         font-size: 10px;
@@ -139,20 +165,20 @@ export const ContainerEye = styled.div`
   flex-direction: row;
   background-color: #171122;
   border: 3px solid white;
-  height: 90px;
-  padding: 7px;
+  height: 60px;
+  padding: 4.5px;
   border-top-left-radius: 10px;
   border-top-right-radius: 10px;
-  border-bottom-left-radius: 35px;
-  border-bottom-right-radius: 35px;
+  border-bottom-left-radius: 25px;
+  border-bottom-right-radius: 25px;
   gap: 7px;
-  transform: scale(0.4);
+  transform: scale(0.6);
 `;
 
 export const Eyes = styled.div`
   position: relative;
-  width: 30px;
-  height: 30px;
+  width: 18px;
+  height: 18px;
   background-color: ${(props) => props.theme.colors.entraptaGlasses};
   border-radius: 100%;
   opacity: 1;
@@ -166,7 +192,7 @@ export const Eyes = styled.div`
 export const Light = styled.div`
   display: flex;
   width: 11px;
-  height: 180px;
+  height: 160px;
   background-color: ${(props) => props.theme.colors.entraptaGlassesLight};
   transform: rotate(45deg);
   margin: -10px;
@@ -212,28 +238,33 @@ export const MobileHeader = styled.div`
   justify-content: center;
   align-items: center;
   background-color: ${(props) => props.theme.colors.tertiary};
-  position: fixed;
+  position: absolute;
   overflow: hidden;
   width: 100vw;
   height: 100vh;
   gap: 40px;
-  bottom: 0;
+  top: 0;
   left: 0;
-  animation: open 0.4s ease-out;
-  transform-origin: 100% 0;
-  -webkit-animation-fill-mode: forwards; /* Chrome 16+, Safari 4+ */
-  -moz-animation-fill-mode: forwards; /* FF 5+ */
-  -o-animation-fill-mode: forwards; /* Not implemented yet */
-  -ms-animation-fill-mode: forwards; /* IE 10+ */
-  animation-fill-mode: forwards; /* When the spec is finished */
+  opacity: 0;
+  animation: fadeIn 0.5s;
+  animation-play-state: running;
+  animation-fill-mode: both;
+  transition: all 0.2s;
 
-  @keyframes open {
-    0% {
-      transform: scale(0);
-      border-radius: 50%;
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+      height: 0px;
+      transform: translateY(
+        -100%
+      ); /* Adicione esta linha para animar o translateY */
     }
-    100% {
-      transform: scale(1);
+    to {
+      opacity: 1;
+      height: 100vh;
+      transform: translateY(
+        0%
+      ); /* Adicione esta linha para animar o translateY */
     }
   }
 
@@ -302,4 +333,4 @@ export const BackText = styled.div`
   opacity: 0;
   transform: translateX(20px);
   transition: all 0.4s;
-`
+`;
