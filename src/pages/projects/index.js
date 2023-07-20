@@ -50,7 +50,7 @@ function Projects() {
                 <div className="line"></div>
               </DateContainer>
               <h1>N Soluções</h1>
-              <h2>Site de divulgação para empresa de tecnologia.</h2>
+              <h2>Landing page for a tech company.</h2>
             </AppDetails>
             <Thumbnail
               src="/static/projects/nproject.gif"
@@ -68,7 +68,7 @@ function Projects() {
                 <div className="line"></div>
               </DateContainer>
               <h1>SouJunior</h1>
-              <h2>Contribui para a plataforma de vagas.</h2>
+              <h2>I've contributed to a Linkedin like plataform.</h2>
             </AppDetails>
             <Thumbnail
               src="/static/projects/soujunior.jpeg"
@@ -86,7 +86,7 @@ function Projects() {
                 <div className="line"></div>
               </DateContainer>
               <h1>CARTUCHOS ONLINE</h1>
-              <h2>Landing page para comércio.</h2>
+              <h2>Landing page.</h2>
             </AppDetails>
             <Thumbnail
               src="/static/projects/cartuchos.jpeg"
